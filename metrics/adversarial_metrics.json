@@ -1,0 +1,5 @@
+{
+  "lr_accuracy_adv": 0.565,
+  "rf_accuracy_adv": 0.565,
+  "xgb_accuracy_adv": 0.435
+}

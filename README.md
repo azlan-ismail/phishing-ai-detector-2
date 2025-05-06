@@ -1,110 +1,88 @@
-# 🛡️ Phishing Detection – Hands-on 1 Training
 
-This repository contains materials for a hands-on training on phishing detection using machine learning and explainable AI. Participants will explore EDA, train multiple models, evaluate their performance, and use both Streamlit and Flask apps for deployment and interpretability.
+# 🧪 Hands-on 2: Adversarial Attack Evaluation & Explainability
+
+## 🎯 Objective
+This tutorial focuses on evaluating the robustness of phishing detection models against adversarial attacks and interpreting their decisions using SHAP and LIME.
 
 ---
 
-## 📁 Folder Structure
+## 📁 Project Folder Structure
 
 ```
-phishing-detection-hands-on/
-├── data/                     # Input dataset (phishing.csv)
-├── models/                   # Trained model files (pkl)
-├── metrics/                  # Classification reports & confusion matrices in JSON
-├── notebooks/                # EDA and model comparison notebooks
-│   ├── Phishing_EDA.ipynb
-│   └── Compare_Models.ipynb
-├── templates/                # HTML form used by Flask app
-│   └── form.html
-├── app.py                   # Flask web app
-├── streamlit_app.py         # Streamlit dashboard
-├── requirements.txt         # Required Python packages
-├── train_and_evaluate_all_models.py  # Training script
-├── README.md
-└── .devcontainer/           # Codespaces configuration
-    ├── devcontainer.json
-    └── Dockerfile
+phishing-ai-detector/
+├── data/
+│   ├── phishing.csv
+│   ├── X_adv_lr.csv
+│   ├── X_adv_rf.csv
+│   └── X_adv_xgb.csv
+├── models/
+│   ├── phishing_model_lr.pkl
+│   ├── phishing_model_rf.pkl
+│   └── phishing_model_xgb.pkl
+├── metrics/
+│   └── adversarial_metrics.json
+├── notebooks/
+│   └── Adversarial_Attack_Evaluation.ipynb
+├── scripts/
+│   └── run_adversarial_eval.py
 ```
 
 ---
 
-## 📊 Contents
+## 🧠 Step-by-Step Instructions
 
-### 1. **EDA Notebook**
-- `notebooks/Phishing_EDA.ipynb`
-- Feature exploration, visualizations, and detailed interpretation.
+### Step 1: Load Original Dataset and Trained Models
+- Dataset: `data/phishing.csv`
+- Models: Logistic Regression, Random Forest, XGBoost (`models/phishing_model_*.pkl`)
 
-### 2. **Model Comparison**
-- `notebooks/Compare_Models.ipynb`
-- Side-by-side metrics and visual comparison of three models: Logistic Regression, Random Forest, and XGBoost.
-
-### 3. **Model Training**
-- `train_and_evaluate_all_models.py`
-- Trains all models and stores results in `models/` and `metrics/` folders.
-
-### 4. **Apps**
-- `streamlit_app.py`: Streamlit UI with SHAP explanations
-- `app.py`: Flask form-based app for prediction
-
----
-
-## 🚀 Running in GitHub Codespaces
-
-Codespaces automatically sets up the Python environment via `.devcontainer/`. Once the Codespace starts:
+### Step 2: Generate Adversarial Examples
+Use the `run_adversarial_eval.py` script to create and evaluate adversarial samples:
 
 ```bash
-pip install -r requirements.txt
+python scripts/run_adversarial_eval.py
 ```
 
-> Alternatively, use the `Rebuild Container` option if dependencies were not automatically installed.
+- This script loads the original models and generates adversarial examples using `BoundaryAttack`.
+- Output CSVs will be saved as:
+  - `data/X_adv_lr.csv`
+  - `data/X_adv_rf.csv`
+  - `data/X_adv_xgb.csv`
+- Evaluation metrics saved to `metrics/adversarial_metrics.json`
 
-### 💡 Tips:
-- Use the VS Code interface to open and run the notebooks.
-- All files and folders are structured for easy exploration.
+### Step 3: Open the Notebook
+Navigate to `notebooks/Adversarial_Attack_Evaluation.ipynb`. Run all cells.
+
+It includes:
+- Accuracy evaluation on adversarial inputs
+- SHAP explanations (for all three models)
+- LIME explanations (for all three models)
+
+### Step 4: SHAP Explanations
+- Use `shap.Explainer(model.predict_proba, X)`
+- Show individual predictions using `shap.plots.waterfall(...)`
+- Understand **which features contributed most** to misclassifications
+
+### Step 5: LIME Explanations
+- Use `LimeTabularExplainer(...)` for black-box interpretability
+- Explain the same adversarial samples
+- View local decision boundaries via `show_in_notebook(...)`
 
 ---
 
-## 🔍 Running Apps
+## 📈 Expected Outcomes
 
-### 🔴 Streamlit
-```bash
-streamlit run streamlit_app.py
-```
+| Model              | Accuracy on Clean Data | Accuracy on Adversarial Data |
+|--------------------|------------------------|-------------------------------|
+| Logistic Regression | ~95%                   | ↓ after attack                |
+| Random Forest       | ~98%                   | ↓ after attack                |
+| XGBoost             | ~99%                   | ↓ after attack                |
 
-### 🌐 Flask
-```bash
-python app.py
-```
-
-Both apps will allow participants to experiment with real predictions, SHAP visualizations, and natural language explanations.
+You should observe **performance drops**, and use SHAP/LIME to diagnose **why the models failed**.
 
 ---
 
-## ⚙️ Dev Container Setup (Codespaces)
+## 📝 Deliverables
 
-`.devcontainer/devcontainer.json`
-```json
-{
-  "name": "phishing-detection-env",
-  "image": "mcr.microsoft.com/devcontainers/python:3.10",
-  "features": {},
-  "postCreateCommand": "pip install -r requirements.txt",
-  "customizations": {
-    "vscode": {
-      "settings": {},
-      "extensions": ["ms-python.python"]
-    }
-  }
-}
-```
-
-`.devcontainer/Dockerfile`
-```Dockerfile
-# No custom image needed; using base Python container
-```
-
----
-
-## ✨ Credits
-
-This training setup was developed to help learners understand the full ML pipeline for phishing detection and build interpretable AI applications.
+1. Completed notebook: `Adversarial_Attack_Evaluation.ipynb`
+2. CSVs for adversarial test sets
+3. Summary of attack results and interpretations (optional slide/report)
