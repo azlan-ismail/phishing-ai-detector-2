@@ -1,0 +1,327 @@
+{
+  "all_missing_features": [],
+  "blank_records_skipped": 0,
+  "byte_count": 789147,
+  "column_count": 31,
+  "columns": {
+    "Abnormal_URL": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "DNSRecord": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Domain_registeration_length": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Favicon": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Google_Index": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "HTTPS_token": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Iframe": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Links_in_tags": {
+      "distinct_nonmissing_values": 3,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Links_pointing_to_page": {
+      "distinct_nonmissing_values": 3,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Page_Rank": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Prefix_Suffix": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Redirect": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": 0.0
+    },
+    "Request_URL": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Result": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "RightClick": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "SFH": {
+      "distinct_nonmissing_values": 3,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "SSLfinal_State": {
+      "distinct_nonmissing_values": 3,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Shortining_Service": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Statistical_report": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "Submitting_to_email": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "URL_Length": {
+      "distinct_nonmissing_values": 3,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "URL_of_Anchor": {
+      "distinct_nonmissing_values": 3,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "age_of_domain": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "double_slash_redirecting": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "having_At_Symbol": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "having_IP_Address": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "having_Sub_Domain": {
+      "distinct_nonmissing_values": 3,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "on_mouseover": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "popUpWidnow": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "port": {
+      "distinct_nonmissing_values": 2,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    },
+    "web_traffic": {
+      "distinct_nonmissing_values": 3,
+      "finite_numeric_count": 11055,
+      "missing_count": 0,
+      "nonfinite_numeric_count": 0,
+      "nonnumeric_count": 0,
+      "numeric_max": 1.0,
+      "numeric_min": -1.0
+    }
+  },
+  "conflicting_feature_groups": 64,
+  "constant_nonmissing_features": [],
+  "distinct_feature_vectors": 5785,
+  "exact_duplicate_rows_beyond_first": 5206,
+  "feature_count": 30,
+  "git_blob_sha1": "3f0fd8159b44b79f73dbb6df52aa499447442053",
+  "identifier_columns": [],
+  "input_file": "phishing.csv",
+  "label_column": "Result",
+  "label_counts_raw": {
+    "-1": 4898,
+    "1": 6157
+  },
+  "label_fractions_raw": {
+    "-1": 0.44305744007236547,
+    "1": 0.5569425599276345
+  },
+  "label_semantics": "unverified",
+  "missing_label_count": 0,
+  "missing_tokens_case_insensitive": [
+    "",
+    "?",
+    "n/a",
+    "na",
+    "nan",
+    "none",
+    "null"
+  ],
+  "repeated_feature_rows_beyond_first": 5270,
+  "row_count": 11055,
+  "rows_in_conflicting_feature_groups": 357,
+  "schema_version": 1,
+  "sha256": "685e9fbdbe08c8b23fdb82e06cf5e154a8516e93f7b07f8a67328f17f86d0d72",
+  "warnings": [
+    "Label meanings and dataset provenance are unverified.",
+    "Feature-vector repetition does not prove that underlying URLs are duplicates.",
+    "Duplicate comparisons use exact CSV strings; numeric equivalences are not normalized.",
+    "No identifier columns supplied; URL/domain overlap cannot be verified.",
+    "Identical recorded feature vectors occur with different labels."
+  ]
+}

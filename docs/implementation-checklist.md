@@ -1,6 +1,6 @@
 # Experiment implementation checklist
 
-Status: planning only. Check items only when evidence is linked.
+Status: initial tutorial-data audit completed; manuscript inputs remain unresolved. Check items only when evidence is linked.
 Protocol: [experimental protocol](experimental-protocol.md).
 
 ## Repository audit
@@ -13,6 +13,18 @@ Inspected main at 8dbb4ab37b94b18e7dc1a273df74398e54f0cc5f.
 - scripts/run_adversarial_eval.py samples from the full dataset, so its evaluation can include model-training examples. Do not reuse those results as held-out evidence.
 - No standalone DQN/DDQN implementation or explicitly named ISCX/Mendeley input appears in the inspected tree. Notebook contents have not been exhaustively audited.
 - Existing tutorial metrics are not results of the proposed protocol.
+
+## Completed preliminary audit
+
+Evidence and reproduction commands: [initial data audit](data-audit.md).
+
+- [x] Audit the repository CSV's structure, raw labels, missingness, and exact repetition.
+- [x] Reconstruct the existing tutorial split and quantify feature overlap.
+- [x] Check saved supervised class-1 metrics and accuracy against confusion matrices.
+- [x] Add reproducible audit scripts and nine passing tests.
+- [x] Identify full-dataset threshold selection and adversarial evaluation limitations.
+
+These checks do not complete Stage A: the original manuscript code, named datasets, label provenance, and prediction-level evidence are still required.
 
 ## Stage A: recover and audit inputs (blocks scientific runs)
 

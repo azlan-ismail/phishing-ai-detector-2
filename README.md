@@ -2,6 +2,8 @@
 
 A planned DQN/DDQN and supervised-baseline study is documented in the [experimental protocol](docs/experimental-protocol.md) and [implementation checklist](docs/implementation-checklist.md). These documents describe planned work, not completed experiments. The existing repository content below remains an adversarial-evaluation tutorial; original manuscript code and dataset provenance must be recovered before research runs.
 
+The [initial data audit](docs/data-audit.md) now documents the existing tutorial CSV and evaluation limitations, with reusable audit scripts and tests. Original manuscript data and code are still required for the redesigned training experiments.
+
 ---
 
 # 🧪 Hands-on 2: Adversarial Attack Evaluation & Explainability
