@@ -1,8 +1,8 @@
 # Research experiment redesign
 
-A planned DQN/DDQN and supervised-baseline study is documented in the [experimental protocol](docs/experimental-protocol.md) and [implementation checklist](docs/implementation-checklist.md). These documents describe planned work, not completed experiments. The existing repository content below remains an adversarial-evaluation tutorial; original manuscript code and dataset provenance must be recovered before research runs.
+A planned DQN/DDQN and supervised-baseline study is documented in the [experimental protocol](docs/experimental-protocol.md) and [implementation checklist](docs/implementation-checklist.md). These documents describe planned work, not completed experiments. The existing repository content below remains an adversarial-evaluation tutorial; the original manuscript implementation has been inspected locally, while dataset provenance and scientific validation remain open.
 
-The [initial data audit](docs/data-audit.md) now documents the existing tutorial CSV and evaluation limitations, with reusable audit scripts and tests. Original manuscript data and code are still required for the redesigned training experiments.
+The [initial data audit](docs/data-audit.md) now documents the existing tutorial CSV and evaluation limitations, with reusable audit scripts and tests. The supplied manuscript data and code have since been inspected locally; the redesigned training implementation and source-definition verification remain next.
 
 ---
 
@@ -93,3 +93,7 @@ You should observe **performance drops**, and use SHAP/LIME to diagnose **why th
 1. Completed notebook: `Adversarial_Attack_Evaluation.ipynb`
 2. CSVs for adversarial test sets
 3. Summary of attack results and interpretations (optional slide/report)
+
+## Exploratory research preprocessing
+
+The supplied manuscript code and original feature tables have now been inspected locally. A [reproducible preparation pipeline](docs/preprocessing.md) creates source-fitted transforms, saved partitions, and both transfer directions. Both grouping modes were exercised on the real tables and all 14 tests passed; see the [validation report](research/audits/preprocessing-validation.json). The four common features remain provisional pending source definitions. No new model results are claimed, and raw datasets remain local.

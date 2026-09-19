@@ -1,6 +1,6 @@
 # Experiment implementation checklist
 
-Status: initial tutorial-data audit completed; manuscript inputs remain unresolved. Check items only when evidence is linked.
+Status: original training/preprocessing scripts and feature tables inspected locally; exploratory preparation implemented. Source documentation and balancing provenance remain unresolved. Check items only when evidence is linked.
 Protocol: [experimental protocol](experimental-protocol.md).
 
 ## Repository audit
@@ -25,6 +25,19 @@ Evidence and reproduction commands: [initial data audit](data-audit.md).
 - [x] Identify full-dataset threshold selection and adversarial evaluation limitations.
 
 These checks do not complete Stage A: the original manuscript code, named datasets, label provenance, and prediction-level evidence are still required.
+
+## Completed exploratory preprocessing
+
+See [implementation and run instructions](preprocessing.md) and [aggregate validation evidence](../research/audits/preprocessing-validation.json).
+
+- [x] Inspect the supplied original DQN/DDQN, feature-construction, and evaluation scripts locally.
+- [x] Trace original ISCX/Mendeley tables to the supplied processed splits.
+- [x] Implement four provisional shared features with explicit invalid-value handling.
+- [x] Save stable row IDs, seeded 60/20/20 partitions, and source-training-only transformation parameters.
+- [x] Run both full-record grouping and reduced-feature grouping sensitivity preparations.
+- [x] Verify all 16 transformed exports; all 14 tests pass.
+
+The source tables have no raw URLs/domains. Candidate feature equivalence and Mendeley label provenance remain pending. These outputs are exploratory, not scientific model results. No original user datasets were uploaded.
 
 ## Stage A: recover and audit inputs (blocks scientific runs)
 
