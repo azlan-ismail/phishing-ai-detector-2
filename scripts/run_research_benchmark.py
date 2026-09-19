@@ -30,6 +30,18 @@ INPUTS = FEATURES + [f + "_missing" for f in FEATURES]
 MODELS = ["always_malicious", "logistic", "random_forest", "mlp", "dqn", "ddqn"]
 
 
+def apply_feature_condition(x, condition):
+    """Zero excluded inputs and their indicators, preserving network initialization."""
+    if condition == 'all':
+        return x
+    if condition != 'without_url_length_ratio':
+        raise ValueError('Unknown feature condition')
+    result = x.copy()
+    for name in ['url_length', 'domain_url_ratio', 'url_length_missing', 'domain_url_ratio_missing']:
+        result[:, INPUTS.index(name)] = 0
+    return result
+
+
 def save_json(path, value):
     Path(path).write_text(json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
 
@@ -279,6 +291,8 @@ def run(args):
     for source in ["iscx", "mendeley"]:
         train_ids, x, y = load_export(folder, manifest, source, source, "train")
         val_ids, vx, vy = load_export(folder, manifest, source, source, "validation")
+        x = apply_feature_condition(x, args.feature_condition)
+        vx = apply_feature_condition(vx, args.feature_condition)
         if set(train_ids) & set(val_ids):
             raise ValueError("Training/validation sample overlap")
         for seed in args.seeds:
@@ -320,6 +334,7 @@ def run(args):
                 pd.DataFrame({"sample_id": val_ids, "label": vy, "score": val_score}).to_csv(directory / "validation_predictions.csv", index=False)
                 for target in ["iscx", "mendeley"]:
                     ids, tx, ty = load_export(folder, manifest, source, target, "test")
+                    tx = apply_feature_condition(tx, args.feature_condition)
                     if set(ids) & (set(train_ids) | set(val_ids)):
                         raise ValueError("Test sample overlap")
                     start = time.perf_counter()
@@ -353,6 +368,7 @@ def main():
     p.add_argument("--prepared", required=True)
     p.add_argument("--output", required=True)
     p.add_argument("--purpose", choices=["smoke", "exploratory"], required=True)
+    p.add_argument('--feature-condition', choices=['all', 'without_url_length_ratio'], default='all')
     p.add_argument("--seeds", nargs="+", type=int, default=[11])
     p.add_argument("--updates", type=int, default=5000)
     p.add_argument("--budget-selection", help="Source-only selection.json; checks data/configuration before applying its budget")

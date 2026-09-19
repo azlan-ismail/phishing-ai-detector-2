@@ -81,3 +81,8 @@ python scripts/verify_benchmark.py --run work/benchmark-five-v1 --output work/ve
 ```
 
 Use fresh output directories for training. The budget-selection input must match preparation hash, discount factor, batch size, learning rate, and reward weighting. The pilot selects a common update budget, not all model hyperparameters; source validation is subsequently reused for decision thresholds. Full hyperparameter tuning, convergence checks and ablations remain pending. The verifier recalculates saved thresholds and metrics using the shared metric routines, checks saved predictions and matched RL training budgets, and produces aggregate mean/sample-SD and paired DDQN-minus-DQN summaries. It is an artifact consistency check, not an independent reimplementation of the metric formulas.
+
+
+## URL-length and ratio ablation
+
+A separate five-seed diagnostic now removes URL length and domain/URL ratio by zeroing those inputs and their missingness indicators. The original partitions, architecture and training budget are retained. See [ablation results](ablation-length-results.md) for the paired comparison, verification and limitations. This completes one feature-dependence diagnostic, not the full tuning/reward/SMOTE ablation suite.

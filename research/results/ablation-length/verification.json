@@ -1,0 +1,187 @@
+{
+  "configuration": {
+    "batch_size": 64,
+    "budget_selection_sha256": "78930502b02d41a2dea967990f0ee12377687be14150d4e4845c70e8eabf154b",
+    "device": "cpu",
+    "early_stopping": "none",
+    "epsilon_decay_per_update": 0.995,
+    "epsilon_initial": 1.0,
+    "epsilon_min": 0.05,
+    "feature_condition": "without_url_length_ratio",
+    "feature_status": "exploratory_pending_source_definition_verification",
+    "fpr_limit": 0.01,
+    "gamma": 0.99,
+    "gradient_clip_norm": 1.0,
+    "hardware": {
+      "platform": "Windows-10-10.0.19045-SP0",
+      "processor": "Intel64 Family 6 Model 142 Stepping 9, GenuineIntel"
+    },
+    "hidden_layers": [
+      128,
+      128
+    ],
+    "input_order": [
+      "url_length",
+      "domain_length",
+      "dot_count_url",
+      "domain_url_ratio",
+      "url_length_missing",
+      "domain_length_missing",
+      "dot_count_url_missing",
+      "domain_url_ratio_missing"
+    ],
+    "learning_rate": 0.001,
+    "preparation_manifest_sha256": "50e9ad9a9b469555541b8e2763c5ef159230ad28be9c872bc8ada7bb2252d0b1",
+    "purpose": "exploratory",
+    "replay_capacity": 10000,
+    "script_sha256": "766b50a3d2f6315a2edf4143f277d16017cbdf132db7925489ccd9fdabed5638",
+    "seeds": [
+      11,
+      23,
+      37,
+      51,
+      71
+    ],
+    "software": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "python": "3.12.14",
+      "sklearn": "1.9.1",
+      "torch": "2.14.0+cpu"
+    },
+    "target_interval_updates": 100,
+    "threads": 2,
+    "trees": 200,
+    "tuning": "none",
+    "updates": 1000,
+    "weighting": "none"
+  },
+  "fit_configurations": 60,
+  "matched_rl_budgets": [
+    {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 6,
+      "optimizer_updates": 1000,
+      "sample_exposures": 63646,
+      "seed": 11,
+      "source": "iscx"
+    },
+    {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 6,
+      "optimizer_updates": 1000,
+      "sample_exposures": 63646,
+      "seed": 23,
+      "source": "iscx"
+    },
+    {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 6,
+      "optimizer_updates": 1000,
+      "sample_exposures": 63646,
+      "seed": 37,
+      "source": "iscx"
+    },
+    {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 6,
+      "optimizer_updates": 1000,
+      "sample_exposures": 63646,
+      "seed": 51,
+      "source": "iscx"
+    },
+    {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 6,
+      "optimizer_updates": 1000,
+      "sample_exposures": 63646,
+      "seed": 71,
+      "source": "iscx"
+    },
+    {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 1,
+      "optimizer_updates": 1000,
+      "sample_exposures": 63986,
+      "seed": 11,
+      "source": "mendeley"
+    },
+    {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 1,
+      "optimizer_updates": 1000,
+      "sample_exposures": 63986,
+      "seed": 23,
+      "source": "mendeley"
+    },
+    {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 1,
+      "optimizer_updates": 1000,
+      "sample_exposures": 63986,
+      "seed": 37,
+      "source": "mendeley"
+    },
+    {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 1,
+      "optimizer_updates": 1000,
+      "sample_exposures": 63986,
+      "seed": 51,
+      "source": "mendeley"
+    },
+    {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 1,
+      "optimizer_updates": 1000,
+      "sample_exposures": 63986,
+      "seed": 71,
+      "source": "mendeley"
+    }
+  ],
+  "metric_file_sha256": "8be558eded3cfe271d918b50abc2503d76ae436da0830a7659d1ceb5ca4a5145",
+  "predictions_recompute_all_metrics": true,
+  "purpose": "exploratory",
+  "seeds": [
+    11,
+    23,
+    37,
+    51,
+    71
+  ],
+  "source_target_evaluations": 120,
+  "uncertainty_scope": "Sample SD across training seeds on fixed partitions; not dataset or test-sampling uncertainty. No significance claim.",
+  "validation_thresholds_reproduced": true,
+  "verified_metric_rows": 360,
+  "verifier_sha256": "55235b5d04fa08ac8019bc711f51f61dc42568c363173513eeabfa62f46389d1"
+}

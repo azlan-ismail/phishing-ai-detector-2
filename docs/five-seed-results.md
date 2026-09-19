@@ -109,3 +109,8 @@ Aggregate evidence is under [research/results/five-seed](../research/results/fiv
 - Paired seed differences are descriptive. No significance or causal claim follows from five fixed-partition seeds. Static feature-table training also does not establish benefits for temporal adaptation or interactive decision-making.
 
 Prioritize verifying the feature/label definitions, then source-only tuning and controlled ablations. Any manuscript claim should distinguish within-source discrimination from transferred performance and should be supported against the supervised and trivial baselines.
+
+
+## URL-length and ratio ablation
+
+A separate five-seed diagnostic now removes URL length and domain/URL ratio by zeroing those inputs and their missingness indicators. The original partitions, architecture and training budget are retained. See [ablation results](ablation-length-results.md) for the paired comparison, verification and limitations. This completes one feature-dependence diagnostic, not the full tuning/reward/SMOTE ablation suite.

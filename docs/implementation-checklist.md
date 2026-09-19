@@ -130,3 +130,8 @@ See [results and scope](five-seed-results.md).
 - [x] Record paired DDQN-minus-DQN differences; all 23 automated tests pass.
 
 The best pilot mean occurs at the largest candidate; convergence is not established. Validation reuse, provisional feature semantics, absent URL/domain identifiers, and prior test-informed redesign prevent confirmatory claims. Checked Stage C/E items indicate implementation and exploratory execution only, not satisfaction of all protocol dependencies.
+
+
+## URL-length and ratio ablation
+
+A separate five-seed diagnostic now removes URL length and domain/URL ratio by zeroing those inputs and their missingness indicators. The original partitions, architecture and training budget are retained. See [ablation results](ablation-length-results.md) for the paired comparison, verification and limitations. This completes one feature-dependence diagnostic, not the full tuning/reward/SMOTE ablation suite.

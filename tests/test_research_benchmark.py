@@ -81,6 +81,20 @@ class BenchmarkTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 bench.load_export(root,manifest,'iscx','iscx','train')
 
+    def test_ablation_removes_excluded_signals_and_indicators_without_mutation(self):
+        x = np.arange(24, dtype=np.float32).reshape(3, 8)
+        before = x.copy()
+        changed = x.copy()
+        removed = [bench.INPUTS.index(n) for n in ['url_length', 'domain_url_ratio', 'url_length_missing', 'domain_url_ratio_missing']]
+        changed[:, removed] = 999
+        a = bench.apply_feature_condition(x, 'without_url_length_ratio')
+        b = bench.apply_feature_condition(changed, 'without_url_length_ratio')
+        np.testing.assert_array_equal(a, b)
+        np.testing.assert_array_equal(x, before)
+        retained = [i for i in range(8) if i not in removed]
+        np.testing.assert_array_equal(a[:, retained], x[:, retained])
+        np.testing.assert_array_equal(a[:, removed], 0)
+
 
 if __name__ == '__main__':
     unittest.main()
