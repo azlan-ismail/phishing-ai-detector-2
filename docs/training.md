@@ -1,5 +1,8 @@
 # Controlled training and evaluation
 
+**Provenance update (19 September 2026):** Mendeley's published labels are now confirmed as 0 = legitimate and 1 = phishing. The ISCX file is treated as the IEEE file renamed without content changes, per the user's explicit assumption; this has not been independently byte-verified. Source papers support the four intended feature meanings, but exact extraction equivalence remains unverified. The [feature-compatibility audit](feature-compatibility.md) documents strong class-conditional distribution differences. This update supersedes earlier statements below that Mendeley's published label meaning is unresolved; historical results and manifests are unchanged.
+
+
 Status: shared trainer and six-model benchmark implemented. The initial real-data run is a single-seed, low-budget smoke experiment. It validates the workflow, not the manuscript's final scientific claims.
 
 The executed smoke run used seed 11, 250 optimizer updates for each neural fit, 50 RF trees, two CPU threads, and the candidate-grouped preparation. It completed 12 model/source configurations and 24 source-target evaluations. All 72 operating-point metric rows were independently recomputed from saved predictions, and source-validation threshold selection was reproduced. All 21 tests passed. Aggregate evidence is in [validation JSON](../research/audits/training-smoke-validation.json) and [metrics CSV](../research/audits/training-smoke-metrics.csv).

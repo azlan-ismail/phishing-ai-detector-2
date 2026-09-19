@@ -1,5 +1,8 @@
 # Five-seed exploratory benchmark
 
+**Provenance update (19 September 2026):** Mendeley's published labels are now confirmed as 0 = legitimate and 1 = phishing. The ISCX file is treated as the IEEE file renamed without content changes, per the user's explicit assumption; this has not been independently byte-verified. Source papers support the four intended feature meanings, but exact extraction equivalence remains unverified. The [feature-compatibility audit](feature-compatibility.md) documents strong class-conditional distribution differences. This update supersedes earlier statements below that Mendeley's published label meaning is unresolved; historical results and manifests are unchanged.
+
+
 This is an actual Python/PyTorch/scikit-learn run on the supplied ISCX and Mendeley numeric tables. It extends the earlier smoke test with a source-validation budget pilot and five reporting seeds. It is not a reproduction of the manuscript's original experiments or a confirmatory benchmark.
 
 ## Design and budget selection

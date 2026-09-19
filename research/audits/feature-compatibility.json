@@ -1,0 +1,188 @@
+{
+  "scope": "Whole-table descriptive audit, not training or hyperparameter selection. Differences do not prove extraction bugs or their cause.",
+  "iscx_rename_assumption": "User states to assume ISCX_Phishing.csv is ISCXURL2016.csv renamed without content changes; not independently byte-verified.",
+  "datasets": {
+    "iscx": {
+      "rows": 15367,
+      "sha256": "99c732baf469f76fe7fa79e28291b3fb685d06b86e307f26ba09fd2ba7d8ae99",
+      "class_counts": {
+        "benign": 7781,
+        "phishing": 7586
+      },
+      "nonfinite_cells": 0,
+      "nonpositive_url_length": 0,
+      "nonpositive_domain_length": 0,
+      "negative_dot_count": 0,
+      "fractional_cells": 0,
+      "domain_longer_than_url": 0,
+      "dots_exceed_url_length": 0,
+      "by_class": {
+        "benign": {
+          "rows": 7781,
+          "quantiles": {
+            "url_length": {
+              "0.0": 50.0,
+              "0.25": 60.0,
+              "0.5": 73.0,
+              "0.75": 92.0,
+              "1.0": 348.0
+            },
+            "domain_length": {
+              "0.0": 5.0,
+              "0.25": 10.0,
+              "0.5": 12.0,
+              "0.75": 14.0,
+              "1.0": 27.0
+            },
+            "dot_count_url": {
+              "0.0": 1.0,
+              "0.25": 1.0,
+              "0.5": 1.0,
+              "0.75": 2.0,
+              "1.0": 19.0
+            },
+            "domain_url_ratio": {
+              "0.0": 0.028901734104046242,
+              "0.25": 0.11864406779661017,
+              "0.5": 0.15942028985507245,
+              "0.75": 0.19696969696969696,
+              "1.0": 0.5
+            }
+          },
+          "url_equals_domain": 0
+        },
+        "phishing": {
+          "rows": 7586,
+          "quantiles": {
+            "url_length": {
+              "0.0": 37.0,
+              "0.25": 44.0,
+              "0.5": 61.0,
+              "0.75": 86.0,
+              "1.0": 318.0
+            },
+            "domain_length": {
+              "0.0": 4.0,
+              "0.25": 14.0,
+              "0.5": 19.0,
+              "0.75": 24.0,
+              "1.0": 227.0
+            },
+            "dot_count_url": {
+              "0.0": 1.0,
+              "0.25": 2.0,
+              "0.5": 3.0,
+              "0.75": 3.0,
+              "1.0": 20.0
+            },
+            "domain_url_ratio": {
+              "0.0": 0.03968253968253968,
+              "0.25": 0.2222222222222222,
+              "0.5": 0.325,
+              "0.75": 0.41304347826086957,
+              "1.0": 0.9452054794520548
+            }
+          },
+          "url_equals_domain": 0
+        }
+      },
+      "stored_ratio_matches_recomputed_rtol_1e-6_atol_1e-8": 15367,
+      "url_character_accounting": {
+        "0": 0,
+        "7": 820,
+        "8": 678
+      },
+      "domain_character_accounting_matches": 13916
+    },
+    "mendeley": {
+      "rows": 58645,
+      "sha256": "2252b0d69252301880b1c87fe34b4f7fa646edaab67e3fc16f7779245085a492",
+      "class_counts": {
+        "phishing": 30647,
+        "benign": 27998
+      },
+      "nonfinite_cells": 0,
+      "nonpositive_url_length": 0,
+      "nonpositive_domain_length": 0,
+      "negative_dot_count": 0,
+      "fractional_cells": 0,
+      "domain_longer_than_url": 0,
+      "dots_exceed_url_length": 0,
+      "by_class": {
+        "benign": {
+          "rows": 27998,
+          "quantiles": {
+            "url_length": {
+              "0.0": 4.0,
+              "0.25": 15.0,
+              "0.5": 19.0,
+              "0.75": 25.0,
+              "1.0": 546.0
+            },
+            "domain_length": {
+              "0.0": 4.0,
+              "0.25": 14.0,
+              "0.5": 17.0,
+              "0.75": 20.0,
+              "1.0": 55.0
+            },
+            "dot_count_url": {
+              "0.0": 1.0,
+              "0.25": 2.0,
+              "0.5": 2.0,
+              "0.75": 2.0,
+              "1.0": 12.0
+            },
+            "domain_url_ratio": {
+              "0.0": 0.029304029304029304,
+              "0.25": 0.9333333333333333,
+              "0.5": 1.0,
+              "0.75": 1.0,
+              "1.0": 1.0
+            }
+          },
+          "url_equals_domain": 16760
+        },
+        "phishing": {
+          "rows": 30647,
+          "quantiles": {
+            "url_length": {
+              "0.0": 5.0,
+              "0.25": 31.0,
+              "0.5": 47.0,
+              "0.75": 72.0,
+              "1.0": 4165.0
+            },
+            "domain_length": {
+              "0.0": 4.0,
+              "0.25": 14.0,
+              "0.5": 17.0,
+              "0.75": 22.0,
+              "1.0": 231.0
+            },
+            "dot_count_url": {
+              "0.0": 1.0,
+              "0.25": 2.0,
+              "0.5": 2.0,
+              "0.75": 3.0,
+              "1.0": 24.0
+            },
+            "domain_url_ratio": {
+              "0.0": 0.0056065239551478085,
+              "0.25": 0.2375,
+              "0.5": 0.38461538461538464,
+              "0.75": 0.5808631211857018,
+              "1.0": 1.0
+            }
+          },
+          "url_equals_domain": 740
+        }
+      },
+      "domain_dots_exceed_whole_url_dots": 0,
+      "url_dot_parts_match_where_all_parts_nonnegative": {
+        "eligible_rows": 7416,
+        "matches": 2826
+      }
+    }
+  }
+}

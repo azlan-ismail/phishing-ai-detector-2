@@ -1,5 +1,8 @@
 # Reproducible preprocessing foundation
 
+**Provenance update (19 September 2026):** Mendeley's published labels are now confirmed as 0 = legitimate and 1 = phishing. The ISCX file is treated as the IEEE file renamed without content changes, per the user's explicit assumption; this has not been independently byte-verified. Source papers support the four intended feature meanings, but exact extraction equivalence remains unverified. The [feature-compatibility audit](feature-compatibility.md) documents strong class-conditional distribution differences. This update supersedes earlier statements below that Mendeley's published label meaning is unresolved; historical results and manifests are unchanged.
+
+
 Status: implemented and tested on the supplied original feature tables. These outputs are exploratory; source definitions and Mendeley numeric-label provenance remain unverified. No models have been trained with this pipeline.
 
 ## Inputs and scope
