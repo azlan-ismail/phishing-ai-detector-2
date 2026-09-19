@@ -1,6 +1,6 @@
 # Experiment implementation checklist
 
-Status: original training/preprocessing scripts and feature tables inspected locally; exploratory preparation implemented. Source documentation and balancing provenance remain unresolved. Check items only when evidence is linked.
+Status: original files inspected, exploratory preparation and corrected six-model trainer implemented; one real-data smoke run completed. Source definitions, balancing provenance, and the full scientific experiment suite remain unresolved. Check items only when evidence is linked.
 Protocol: [experimental protocol](experimental-protocol.md).
 
 ## Repository audit
@@ -58,6 +58,17 @@ Acceptance: verified dataset manifest and reproducible metric audit.
 - [ ] Verify no training/validation/test overlap or target-fitted preprocessing.
 
 Acceptance: feature dictionary, partition IDs/hashes, and leakage checks.
+
+## Completed training implementation and smoke check
+
+See [training instructions](training.md).
+
+- [x] Implement all six models, with matched DQN/DDQN settings and true-class reward weighting.
+- [x] Save source-validation thresholds, continuous scores, predictions, training histories, and run metadata.
+- [x] Execute seed 11 with 250 neural updates and 50 RF trees on the actual candidate-grouped datasets.
+- [x] Verify 72 operating-point results across 24 source-target evaluations; all 21 tests pass.
+
+This does not complete five-seed evaluation, tuning, feature-semantic verification, ablations, or adequate-budget convergence analysis.
 
 ## Stage C: core models (depends on B)
 

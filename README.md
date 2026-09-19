@@ -97,3 +97,7 @@ You should observe **performance drops**, and use SHAP/LIME to diagnose **why th
 ## Exploratory research preprocessing
 
 The supplied manuscript code and original feature tables have now been inspected locally. A [reproducible preparation pipeline](docs/preprocessing.md) creates source-fitted transforms, saved partitions, and both transfer directions. Both grouping modes were exercised on the real tables and all 14 tests passed; see the [validation report](research/audits/preprocessing-validation.json). The four common features remain provisional pending source definitions. No new model results are claimed, and raw datasets remain local.
+
+## Controlled training implementation
+
+The [shared trainer and six-model benchmark](docs/training.md) have now run on the actual prepared ISCX/Mendeley data. The initial single-seed smoke run completed all models and both transfer directions; all 21 tests pass, and 72 operating-point results were verified from saved predictions. The [aggregate evidence](research/audits/training-smoke-validation.json) and [smoke metrics](research/audits/training-smoke-metrics.csv) are reproducible workflow checks, not final manuscript results. Use the separate research requirements and a new local output directory.

@@ -1,0 +1,84 @@
+{
+  "completion": {
+    "complete": true,
+    "metric_rows": 72,
+    "note": "One-seed sample standard deviations are undefined; no significance claims.",
+    "purpose": "smoke"
+  },
+  "configuration": {
+    "batch_size": 64,
+    "device": "cpu",
+    "early_stopping": "none",
+    "epsilon_decay_per_update": 0.995,
+    "epsilon_initial": 1.0,
+    "epsilon_min": 0.05,
+    "feature_status": "exploratory_pending_source_definition_verification",
+    "fpr_limit": 0.01,
+    "gamma": 0.99,
+    "gradient_clip_norm": 1.0,
+    "hardware": {
+      "platform": "Windows-10-10.0.19045-SP0",
+      "processor": "Intel64 Family 6 Model 142 Stepping 9, GenuineIntel"
+    },
+    "hidden_layers": [
+      128,
+      128
+    ],
+    "input_order": [
+      "url_length",
+      "domain_length",
+      "dot_count_url",
+      "domain_url_ratio",
+      "url_length_missing",
+      "domain_length_missing",
+      "dot_count_url_missing",
+      "domain_url_ratio_missing"
+    ],
+    "learning_rate": 0.001,
+    "preparation_manifest_sha256": "50e9ad9a9b469555541b8e2763c5ef159230ad28be9c872bc8ada7bb2252d0b1",
+    "purpose": "smoke",
+    "replay_capacity": 10000,
+    "script_sha256": "ce1dbceda6d8e64e7d4825f2254d29752947d2ab8da2ebc760bb415cdc6e2f77",
+    "seeds": [
+      11
+    ],
+    "software": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "python": "3.12.14",
+      "sklearn": "1.9.1",
+      "torch": "2.14.0+cpu"
+    },
+    "target_interval_updates": 100,
+    "threads": 2,
+    "trees": 50,
+    "tuning": "none",
+    "updates": 250,
+    "weighting": "none"
+  },
+  "fit_configurations_completed": 12,
+  "matched_dqn_ddqn_training_budgets": true,
+  "models": [
+    "always_malicious",
+    "logistic",
+    "random_forest",
+    "mlp",
+    "dqn",
+    "ddqn"
+  ],
+  "neural_updates_per_fit": 250,
+  "not_final_scientific_results": true,
+  "operating_point_rows_verified": 72,
+  "purpose": "smoke",
+  "rf_trees": 50,
+  "saved_predictions_recompute_all_metrics": true,
+  "seed": 11,
+  "source_target_model_evaluations": 24,
+  "sources": [
+    "iscx",
+    "mendeley"
+  ],
+  "tests_passed": 21,
+  "threads": 2,
+  "thresholds_recomputed_from_source_validation": true
+}
