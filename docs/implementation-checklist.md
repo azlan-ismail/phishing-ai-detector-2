@@ -135,3 +135,8 @@ The best pilot mean occurs at the largest candidate; convergence is not establis
 ## URL-length and ratio ablation
 
 A separate five-seed diagnostic now removes URL length and domain/URL ratio by zeroing those inputs and their missingness indicators. The original partitions, architecture and training budget are retained. See [ablation results](ablation-length-results.md) for the paired comparison, verification and limitations. This completes one feature-dependence diagnostic, not the full tuning/reward/SMOTE ablation suite.
+
+
+## Discount-factor diagnostic and experiment register
+
+The completed [gamma-zero comparison](ablation-gamma-results.md) keeps the original features, five seeds and 1,000-update budget. Its 360 metric rows and 180 paired prediction files were verified; gamma-zero DQN/DDQN predictions and histories match exactly. See the [experiment register](experiment-register.md) and artifact inventory for all recorded stages. This does not complete full discount tuning or the remaining reward/resampling ablations.
