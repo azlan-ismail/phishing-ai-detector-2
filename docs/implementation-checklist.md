@@ -1,6 +1,6 @@
 # Experiment implementation checklist
 
-Status: original files inspected, exploratory preparation and corrected six-model trainer implemented; one real-data smoke run completed. Source definitions, balancing provenance, and the full scientific experiment suite remain unresolved. Check items only when evidence is linked.
+Status: original files inspected, exploratory preparation and corrected six-model trainer implemented; real-data smoke and five-seed exploratory comparisons completed. Source definitions, balancing provenance, and the full scientific experiment suite remain unresolved. Check items only when evidence is linked.
 Protocol: [experimental protocol](experimental-protocol.md).
 
 ## Repository audit
@@ -24,7 +24,7 @@ Evidence and reproduction commands: [initial data audit](data-audit.md).
 - [x] Add reproducible audit scripts and nine passing tests.
 - [x] Identify full-dataset threshold selection and adversarial evaluation limitations.
 
-These checks do not complete Stage A: the original manuscript code, named datasets, label provenance, and prediction-level evidence are still required.
+These preliminary checks did not complete Stage A. The original manuscript code and named tables were subsequently inspected, as recorded below; label provenance and original prediction-level evidence remain unresolved.
 
 ## Completed exploratory preprocessing
 
@@ -68,15 +68,15 @@ See [training instructions](training.md).
 - [x] Execute seed 11 with 250 neural updates and 50 RF trees on the actual candidate-grouped datasets.
 - [x] Verify 72 operating-point results across 24 source-target evaluations; all 21 tests pass.
 
-This does not complete five-seed evaluation, tuning, feature-semantic verification, ablations, or adequate-budget convergence analysis.
+A subsequent five-seed exploratory evaluation is recorded below. Full tuning, feature-semantic verification, ablations, and convergence analysis remain open.
 
 ## Stage C: core models (depends on B)
 
-- [ ] Implement always-malicious, LR, RF, MLP, DQN, and DDQN interfaces.
-- [ ] Match MLP hidden architecture and control DQN/DDQN training settings.
+- [x] Implement always-malicious, LR, RF, MLP, DQN, and DDQN interfaces. (Exploratory four-feature run; see five-seed results.)
+- [x] Match MLP hidden architecture and control DQN/DDQN training settings. (Exploratory four-feature run; see five-seed results.)
 - [ ] Add source-only tuning with recorded trial budgets.
-- [ ] Run five training seeds and both transfer directions.
-- [ ] Persist continuous scores, labels, predictions, and run metadata.
+- [x] Run five training seeds and both transfer directions. (Exploratory four-feature run; see five-seed results.)
+- [x] Persist continuous scores, labels, predictions, and run metadata. (Exploratory four-feature run; see five-seed results.)
 
 Acceptance: all four scenarios reproducible from one documented entry point.
 
@@ -92,12 +92,12 @@ Acceptance: per-run ablation tables with matched conditions and documented excep
 
 ## Stage E: operational evaluation and analysis (depends on C; integrates D)
 
-- [ ] Select thresholds using source validation only and freeze before testing.
-- [ ] Report actual target FPR, PR curves, confusion counts, and trivial baselines.
-- [ ] Report sample SD, paired differences, and appropriately scoped uncertainty.
+- [x] Select thresholds using source validation only and freeze before testing. (Exploratory four-feature run; see five-seed results.)
+- [x] Report actual target FPR, PR curves, confusion counts, and trivial baselines. (Exploratory four-feature run; see five-seed results.)
+- [x] Report sample SD, paired differences, and appropriately scoped uncertainty. (Exploratory four-feature run; see five-seed results.)
 - [ ] Diagnose one-class collapse and source-overfitting behavior.
 - [ ] Plot common-scale learning curves; remove unmeasured causal claims.
-- [ ] Record training/inference costs and exact environment.
+- [x] Record training/inference costs and exact environment. (Exploratory four-feature run; see five-seed results.)
 
 Acceptance: figures and tables generated from saved predictions with no manual metric editing.
 
@@ -115,3 +115,15 @@ Each run records: run_id, git_commit, dataset version/hash, partition hash, feat
 Prediction records contain stable sample_id, domain_group when available, true_label, continuous_score, predicted_label, and operating_point. Do not include raw sensitive URLs in public artifacts.
 
 Store new research outputs separately from existing tutorial models/metrics. Large/private datasets and checkpoints can remain in approved external storage with retrieval instructions and checksums.
+
+## Completed five-seed exploratory evaluation
+
+See [results and scope](five-seed-results.md).
+
+- [x] Compare 1,000/2,000/4,000 neural updates with pilot seed 101 using source-validation AP only.
+- [x] Apply the predefined near-best rule and freeze 1,000 updates for reporting seeds 11, 23, 37, 51, 71; use 200 RF trees.
+- [x] Complete 60 model/source/seed configurations and 120 source-target evaluations.
+- [x] Recompute 360 metric rows and frozen validation thresholds from saved predictions.
+- [x] Record paired DDQN-minus-DQN differences; all 23 automated tests pass.
+
+The best pilot mean occurs at the largest candidate; convergence is not established. Validation reuse, provisional feature semantics, absent URL/domain identifiers, and prior test-informed redesign prevent confirmatory claims. Checked Stage C/E items indicate implementation and exploratory execution only, not satisfaction of all protocol dependencies.

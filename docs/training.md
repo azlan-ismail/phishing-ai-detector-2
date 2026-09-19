@@ -40,7 +40,7 @@ An extended exploratory run can use --seeds 11 23 37 51 71 and a larger prespeci
 - Each collection batch is followed by one replay update. The last batch of a traversal may be shorter. Sample exposures and completed traversals are recorded.
 - Gamma defaults to 0.99. This is a classification environment with action-independent transitions, not evidence of temporal adaptation. --gamma 0 provides a contextual-classification control.
 - Symmetric reward is +1 for correct and -1 for incorrect predictions. Optional --weighting balanced multiplies this by n/(2*n_class) for the true source-training class, for both algorithms. It uses no row-position groups. The same option weights the supervised objectives.
-- MLP uses cross-entropy. DQN and DDQN use MSE against detached Q-targets. There is no tuning, early stopping, SMOTE, or feature selection in this initial comparison.
+- MLP uses cross-entropy. DQN and DDQN use MSE against detached Q-targets. The smoke comparison has no tuning, early stopping, SMOTE, or feature selection. A later exploratory run selects a common neural update budget using source validation as described below.
 
 Equal neural update budgets are a controlled diagnostic, not proof of equivalent optimization difficulty. Logistic regression and Random Forest have different fitting procedures; compare recorded time and iterations alongside predictive metrics.
 
@@ -64,4 +64,17 @@ The loader checks prepared-file hashes, feature order, finite inputs, class labe
 
 Keep checkpoints and prediction-level files local. Only aggregate smoke validation evidence should be committed by default. Do not deserialize unknown joblib/PyTorch files; this runner writes its own checkpoints and does not load prior model artifacts.
 
-Next scientific work remains: verify source feature definitions and label provenance; determine adequate source-only training budgets; run controlled five-seed experiments, tuning and ablations; and seek an independent confirmation dataset.
+Next scientific work remains: verify source feature definitions and label provenance; establish convergence; conduct full tuning and ablations; and seek an independent confirmation dataset.
+
+
+## Five-seed exploratory comparison
+
+The completed source-validation budget pilot and five-seed results are documented in [five-seed results](five-seed-results.md). Reproduce on the candidate-grouped preparation with:
+
+```powershell
+python scripts/select_training_budget.py --prepared work/prepared-candidate-v2 --output work/budget-pilot-v1 --candidates 1000 2000 4000 --seed 101 --threads 2
+python scripts/run_research_benchmark.py --prepared work/prepared-candidate-v2 --output work/benchmark-five-v1 --purpose exploratory --seeds 11 23 37 51 71 --budget-selection work/budget-pilot-v1/selection.json --trees 200 --threads 2
+python scripts/verify_benchmark.py --run work/benchmark-five-v1 --output work/verified-five-v1
+```
+
+Use fresh output directories for training. The budget-selection input must match preparation hash, discount factor, batch size, learning rate, and reward weighting. The pilot selects a common update budget, not all model hyperparameters; source validation is subsequently reused for decision thresholds. Full hyperparameter tuning, convergence checks and ablations remain pending. The verifier recalculates saved thresholds and metrics using the shared metric routines, checks saved predictions and matched RL training budgets, and produces aggregate mean/sample-SD and paired DDQN-minus-DQN summaries. It is an artifact consistency check, not an independent reimplementation of the metric formulas.

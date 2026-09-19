@@ -240,6 +240,16 @@ def load_export(folder, manifest, source, target, split):
 
 def run(args):
     folder, output = Path(args.prepared), Path(args.output)
+    budget_hash = None
+    if args.budget_selection:
+        selected = json.loads(Path(args.budget_selection).read_text())
+        if selected['preparation_manifest_sha256'] != file_hash(folder / 'manifest.json'):
+            raise ValueError('Budget selection belongs to a different preparation')
+        for key in ['gamma', 'batch_size', 'learning_rate', 'weighting']:
+            if selected[key] != getattr(args, key):
+                raise ValueError('Budget selection settings mismatch: ' + key)
+        args.updates = int(selected['selected_updates'])
+        budget_hash = file_hash(args.budget_selection)
     if output.exists():
         raise ValueError("Output exists; use a new directory")
     if args.updates < 1 or args.trees < 1 or not 0 < args.fpr_limit < 1:
@@ -250,6 +260,8 @@ def run(args):
     manifest = json.loads((folder / "manifest.json").read_text())
     output.mkdir(parents=True)
     configuration = dict(vars(args))
+    configuration.pop('budget_selection')
+    configuration['budget_selection_sha256'] = budget_hash
     configuration.update({"input_order": INPUTS, "hidden_layers": [128, 128], "device": "cpu",
                           "replay_capacity": 10000, "target_interval_updates": 100,
                           "epsilon_initial": 1.0, "epsilon_decay_per_update": .995, "epsilon_min": .05,
@@ -343,6 +355,7 @@ def main():
     p.add_argument("--purpose", choices=["smoke", "exploratory"], required=True)
     p.add_argument("--seeds", nargs="+", type=int, default=[11])
     p.add_argument("--updates", type=int, default=5000)
+    p.add_argument("--budget-selection", help="Source-only selection.json; checks data/configuration before applying its budget")
     p.add_argument("--batch-size", type=int, default=64)
     p.add_argument("--gamma", type=float, default=.99)
     p.add_argument("--learning-rate", type=float, default=.001)

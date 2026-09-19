@@ -1,8 +1,10 @@
 # Research experiment redesign
 
-A planned DQN/DDQN and supervised-baseline study is documented in the [experimental protocol](docs/experimental-protocol.md) and [implementation checklist](docs/implementation-checklist.md). These documents describe planned work, not completed experiments. The existing repository content below remains an adversarial-evaluation tutorial; the original manuscript implementation has been inspected locally, while dataset provenance and scientific validation remain open.
+A planned DQN/DDQN and supervised-baseline study is documented in the [experimental protocol](docs/experimental-protocol.md) and [implementation checklist](docs/implementation-checklist.md). The protocol distinguishes planned scientific work from completed exploratory checks. The existing repository content below remains an adversarial-evaluation tutorial; the original manuscript implementation has been inspected locally, while dataset provenance and scientific validation remain open.
 
-The [initial data audit](docs/data-audit.md) now documents the existing tutorial CSV and evaluation limitations, with reusable audit scripts and tests. The supplied manuscript data and code have since been inspected locally; the redesigned training implementation and source-definition verification remain next.
+The [initial data audit](docs/data-audit.md) now documents the existing tutorial CSV and evaluation limitations, with reusable audit scripts and tests. The supplied manuscript data and code have since been inspected locally; the corrected six-model trainer and five-seed exploratory comparison are complete. Source-definition verification, full tuning, ablations and independent confirmation remain open.
+
+The [five-seed results](docs/five-seed-results.md) report an actual Python run on the supplied data, including source-only budget selection, supervised baselines, bidirectional transfer and recomputed metrics. These results use four provisional shared features and do not establish DDQN superiority.
 
 ---
 

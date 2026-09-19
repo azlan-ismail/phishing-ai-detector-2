@@ -1,0 +1,19 @@
+{
+  "ap_tolerance": 0.005,
+  "batch_size": 64,
+  "candidate_updates": [
+    1000,
+    2000,
+    4000
+  ],
+  "gamma": 0.99,
+  "learning_rate": 0.001,
+  "pilot_seed": 101,
+  "preparation_manifest_sha256": "50e9ad9a9b469555541b8e2763c5ef159230ad28be9c872bc8ada7bb2252d0b1",
+  "rule": "Smallest common budget within tolerance of best mean source-validation AP across 2 sources x 3 neural models; each pair equally weighted.",
+  "selector_script_sha256": "b9a1e565a66b29b575579f6e66526aa3c009dfb4b91bd86b3c4741950aca85af",
+  "test_data_used_for_selection": false,
+  "threads": 2,
+  "trainer_script_sha256": "71eaee167782f8209c8aa0d371ba419db85c26d8a0fc2789544cd7744f21e270",
+  "weighting": "none"
+}
