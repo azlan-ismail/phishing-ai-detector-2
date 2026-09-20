@@ -116,7 +116,8 @@ class Replay:
 
 
 def train_neural(x, y, algorithm, seed, updates, batch_size=64, gamma=.99,
-                 learning_rate=.001, weighting="none", capacity=10000, target_interval=100):
+                 learning_rate=.001, weighting="none", capacity=10000, target_interval=100,
+                 observer=None):
     if algorithm not in {"mlp", "dqn", "ddqn"} or updates < 1 or batch_size < 1:
         raise ValueError("Invalid neural training configuration")
     if capacity < batch_size or target_interval < 1 or not 0 <= gamma <= 1:
@@ -180,6 +181,8 @@ def train_neural(x, y, algorithm, seed, updates, batch_size=64, gamma=.99,
         history.append({"update": update + 1, "loss": float(loss.detach()),
                         "epsilon": epsilon if algorithm != "mlp" else None,
                         "collection_mean_reward": mean_reward, "training_sample_exposures": exposures})
+        if observer is not None:
+            observer(update + 1, net)
     return net.eval(), history, {"class_weights": weights.tolist(), "optimizer_updates": updates,
                                 "sample_exposures": exposures, "completed_training_traversals": completed_epochs}
 
@@ -252,6 +255,16 @@ def load_export(folder, manifest, source, target, split):
 
 def run(args):
     folder, output = Path(args.prepared), Path(args.output)
+    tuning = None
+    if args.tuning_selection:
+        if args.budget_selection:
+            raise ValueError('Use either budget selection or model tuning selection')
+        tuning = json.loads(Path(args.tuning_selection).read_text())
+        if tuning['preparation_manifest_sha256'] != file_hash(folder / 'manifest.json'):
+            raise ValueError('Tuning preparation mismatch')
+        for key in ['gamma','batch_size','weighting','feature_condition','trees']:
+            if tuning[key] != getattr(args, key):
+                raise ValueError('Tuning configuration mismatch: ' + key)
     budget_hash = None
     if args.budget_selection:
         selected = json.loads(Path(args.budget_selection).read_text())
@@ -273,6 +286,9 @@ def run(args):
     output.mkdir(parents=True)
     configuration = dict(vars(args))
     configuration.pop('budget_selection')
+    configuration.pop('tuning_selection')
+    configuration['tuning_selection_sha256'] = file_hash(args.tuning_selection) if tuning else None
+    configuration['selected_settings'] = tuning['selected'] if tuning else None
     configuration['budget_selection_sha256'] = budget_hash
     configuration.update({"input_order": INPUTS, "hidden_layers": [128, 128], "device": "cpu",
                           "replay_capacity": 10000, "target_interval_updates": 100,
@@ -286,6 +302,10 @@ def run(args):
                           "hardware": {"platform": platform.platform(), "processor": platform.processor()}})
     configuration.pop("prepared")
     configuration.pop("output")
+    if tuning:
+        configuration['tuning'] = 'six_candidates_per_model_source_validation_AP'
+        configuration['updates'] = 'per_source_model_selected_settings'
+        configuration['learning_rate'] = 'per_source_model_selected_settings'
     save_json(output / "run.json", configuration)
     metrics = []
     for source in ["iscx", "mendeley"]:
@@ -297,6 +317,7 @@ def run(args):
             raise ValueError("Training/validation sample overlap")
         for seed in args.seeds:
             for name in MODELS:
+                selected_config = tuning['selected'][source][name] if tuning and name != 'always_malicious' else {}
                 directory = output / (source + "_" + name + "_" + str(seed))
                 directory.mkdir()
                 start = time.perf_counter()
@@ -305,16 +326,18 @@ def run(args):
                     model = None
                 elif name == "logistic":
                     model = LogisticRegression(max_iter=2000, random_state=seed,
+                                               C=selected_config.get('C', 1.0),
                                                class_weight="balanced" if args.weighting == "balanced" else None)
                     model.fit(x, y)
                     training["iterations"] = model.n_iter_.tolist()
                 elif name == "random_forest":
                     model = RandomForestClassifier(n_estimators=args.trees, random_state=seed, n_jobs=args.threads,
+                                                   max_depth=selected_config.get('max_depth'), min_samples_leaf=selected_config.get('min_samples_leaf', 1),
                                                    class_weight="balanced" if args.weighting == "balanced" else None)
                     model.fit(x, y)
                 else:
-                    model, history, training = train_neural(x, y, name, seed, args.updates,
-                        batch_size=args.batch_size, gamma=args.gamma, learning_rate=args.learning_rate, weighting=args.weighting)
+                    model, history, training = train_neural(x, y, name, seed, selected_config.get('updates', args.updates),
+                        batch_size=args.batch_size, gamma=args.gamma, learning_rate=selected_config.get('learning_rate', args.learning_rate), weighting=args.weighting)
                     pd.DataFrame(history).to_csv(directory / "training.csv", index=False)
                 fit_seconds = time.perf_counter() - start
                 if name in {"mlp", "dqn", "ddqn"}:
@@ -372,6 +395,7 @@ def main():
     p.add_argument("--seeds", nargs="+", type=int, default=[11])
     p.add_argument("--updates", type=int, default=5000)
     p.add_argument("--budget-selection", help="Source-only selection.json; checks data/configuration before applying its budget")
+    p.add_argument('--tuning-selection', help='Selected per-source/model settings from tune_source_models.py')
     p.add_argument("--batch-size", type=int, default=64)
     p.add_argument("--gamma", type=float, default=.99)
     p.add_argument("--learning-rate", type=float, default=.001)

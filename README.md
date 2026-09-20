@@ -103,3 +103,7 @@ The supplied manuscript code and original feature tables have now been inspected
 ## Controlled training implementation
 
 The [shared trainer and six-model benchmark](docs/training.md) have now run on the actual prepared ISCX/Mendeley data. The initial single-seed smoke run completed all models and both transfer directions; all 21 tests pass, and 72 operating-point results were verified from saved predictions. The [aggregate evidence](research/audits/training-smoke-validation.json) and [smoke metrics](research/audits/training-smoke-metrics.csv) are reproducible workflow checks, not final manuscript results. Use the separate research requirements and a new local output directory.
+
+## Completed bounded tuning stage (20 September 2026)
+
+Source-only six-candidate tuning and the selected five-seed runs are complete. See the [tuned results and reproducible commands](docs/tuned-source-results.md) for the current stage; earlier sections describe the historical baseline and ablations. All 60 candidate objectives, 360 final metric rows and 180 sample-paired prediction files passed verification; the 26-test suite passed. All neural selections use 8,000 updates and learning rate .001. Convergence, independent confirmation and a matched longer-budget gamma comparison remain open. Public aggregates include per-seed metrics, SD summaries, learning curves and paired changes; private predictions and checkpoints are indexed in the updated artifact inventory.

@@ -91,3 +91,7 @@ A separate five-seed diagnostic now removes URL length and domain/URL ratio by z
 ## Discount-factor diagnostic and experiment register
 
 The completed [gamma-zero comparison](ablation-gamma-results.md) keeps the original features, five seeds and 1,000-update budget. Its 360 metric rows and 180 paired prediction files were verified; gamma-zero DQN/DDQN predictions and histories match exactly. See the [experiment register](experiment-register.md) and artifact inventory for all recorded stages. This does not complete full discount tuning or the remaining reward/resampling ablations.
+
+## Completed bounded tuning stage (20 September 2026)
+
+Source-only six-candidate tuning and the selected five-seed runs are complete. See the [tuned results and reproducible commands](tuned-source-results.md) for the current stage; earlier sections describe the historical baseline and ablations. All 60 candidate objectives, 360 final metric rows and 180 sample-paired prediction files passed verification; the 26-test suite passed. All neural selections use 8,000 updates and learning rate .001. Convergence, independent confirmation and a matched longer-budget gamma comparison remain open. Public aggregates include per-seed metrics, SD summaries, learning curves and paired changes; private predictions and checkpoints are indexed in the updated artifact inventory.

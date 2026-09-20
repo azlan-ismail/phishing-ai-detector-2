@@ -55,9 +55,15 @@ def verify(run, output):
         for seed in config['seeds']:
             left = json.loads((run / f'{source}_dqn_{seed}/selection.json').read_text())['training']
             right = json.loads((run / f'{source}_ddqn_{seed}/selection.json').read_text())['training']
-            if left != right:
+            if left != right and not config.get('selected_settings'):
                 raise ValueError('DQN/DDQN training budget mismatch')
-            budgets.append({'source': source, 'seed': seed, **left})
+            if config.get('selected_settings'):
+                for name, training in [('dqn',left),('ddqn',right)]:
+                    if training['optimizer_updates'] != config['selected_settings'][source][name]['updates']:
+                        raise ValueError('Selected RL budget mismatch')
+                budgets.append({'source': source, 'seed': seed, 'dqn':left, 'ddqn':right})
+            else:
+                budgets.append({'source': source, 'seed': seed, **left})
     output.mkdir(parents=True, exist_ok=True)
     numeric = ['average_precision', 'roc_auc', 'f1', 'precision', 'recall', 'fpr', 'balanced_accuracy']
     summary = metrics.groupby(['source', 'target', 'model', 'operating_point'])[numeric].agg(['mean', 'std', 'count'])
@@ -73,7 +79,8 @@ def verify(run, output):
               'fit_configurations': 2 * len(MODELS) * len(config['seeds']),
               'source_target_evaluations': 4 * len(MODELS) * len(config['seeds']),
               'validation_thresholds_reproduced': True, 'predictions_recompute_all_metrics': True,
-              'matched_rl_budgets': budgets, 'configuration': config,
+              'rl_budget_check': 'matches per-model tuning selection' if config.get('selected_settings') else 'matched DQN/DDQN budgets',
+              'rl_budgets': budgets, 'configuration': config,
               'metric_file_sha256': file_hash(run / 'metrics.csv'),
               'uncertainty_scope': 'Sample SD across training seeds on fixed partitions; not dataset or test-sampling uncertainty. No significance claim.',
               'verifier_sha256': file_hash(__file__)}
