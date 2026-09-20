@@ -111,3 +111,7 @@ Source-only six-candidate tuning and the selected five-seed runs are complete. S
 ## Completed matched longer-budget discount ablation (20 September 2026)
 
 The previously listed matched longer-budget gamma comparison is complete. [Results and reproduction commands](docs/ablation-gamma-tuned-results.md) compare gamma 0 against gamma .99 with the same five seeds and inherited 8,000-update tuned settings. All 360 metric rows, 180 paired prediction files and actual neural exposures were verified; all 29 tests passed. Non-RL control decisions and metrics are unchanged, and gamma-zero DQN/DDQN predictions and histories match exactly. Within-dataset AP improves slightly while transfer effects are mixed. Convergence and independent confirmation remain open. Per-seed aggregates, SD summaries and paired changes are recorded under research/results/gamma-zero-tuned; the inventory covers 3,186 local artifacts.
+
+## Cross-dataset validation readiness
+
+The [cross-dataset protocol audit](docs/cross-dataset-validation.md) reproduces both saved transfer exports using source-training-only preprocessing. It separates verified numeric preparation from unresolved extractor equivalence, records target range and feature-collision diagnostics, and specifies the raw-URL/extractor evidence needed for a stronger follow-up. Existing transfer results remain exploratory; no additional model training was performed for this audit.

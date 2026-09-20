@@ -41,3 +41,7 @@ The tuned stage verified all 360 metrics, 60 candidate objectives and 180 paired
 The gamma-zero run completed 60 configurations and 360 metric rows at 8,000 neural updates using the original tuned selection unchanged. All metrics and thresholds were verified, all 180 prediction files matched sample identities, and actual neural training exposures matched the reference. All 120 non-RL control prediction files agree within 1e-12 (maximum score difference 3.33e-16); decisions and metrics are unchanged. Gamma-zero DQN/DDQN outputs and histories match exactly across 40 files. All 29 tests passed.
 
 Within-dataset AP improved slightly, with mixed transfer effects; there is no consistent benefit for gamma .99 under these matched settings. See [results](ablation-gamma-tuned-results.md). The inventory now covers 3,186 files across 17 folders. Source-only convergence extension, independent confirmation, feature-equivalence work and reward/resampling ablations remain open.
+
+## Cross-dataset protocol audit (20 September 2026)
+
+A read-only reconstruction reproduced both source transformers and transfer exports against raw/partition/export hashes and labels. This adds no model fits or metric rows; experiment counts and the 3,186-file run inventory are unchanged. New aggregate audit evidence is stored separately in research/audits/cross-dataset-protocol.json. [Cross-dataset validation](cross-dataset-validation.md) records the limits, range/collision diagnostics and the evidence needed for harmonized extraction and independent confirmation.

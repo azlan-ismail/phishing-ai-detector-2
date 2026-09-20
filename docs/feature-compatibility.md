@@ -51,3 +51,7 @@ python scripts/audit_feature_compatibility.py --iscx "path/to/ISCX_Phishing.csv"
 ```
 
 The original datasets remain unchanged. Only code, documentation and aggregate diagnostics are suitable for this PR.
+
+## Cross-dataset protocol reconstruction (20 September 2026)
+
+Both saved transfer exports have now been reproduced from the raw numeric inputs and source-training-only transformers, with hash and row-label checks. This verifies preprocessing correctness but does not resolve upstream extraction equivalence. See [cross-dataset validation](cross-dataset-validation.md) for range/collision diagnostics, the legacy-code assessment, exact RA evidence requests and a protocol for harmonized follow-up evaluation. Existing results remain exploratory and unchanged.
