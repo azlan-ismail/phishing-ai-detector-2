@@ -10,10 +10,11 @@ This register separates implementation checks from exploratory scientific compar
 | Remove URL length and ratio | ablation-length-v1 | Same five seeds/budget; gamma .99; excluded inputs and indicators zeroed | [Feature ablation](ablation-length-results.md) |
 | Bounded source-only tuning | tuning-source-v1 | Seed 101; six candidates per trained model/source; 60 candidate evaluations | [Tuning report](tuned-source-results.md) |
 | Tuned five-seed evaluation | benchmark-tuned-v1 | Same reporting seeds; selected neural budget 8,000, learning rate .001; selected LR/RF settings | [Tuning report](tuned-source-results.md) |
+| Matched longer-budget five-seed evaluation | benchmark-matched-long-v1 | ISCX 16,000 / Mendeley 28,000 updates shared by MLP/DQN/DDQN; same five seeds and tuned controls | [Results](matched-long-results.md) |
 | Longer-budget discount ablation | ablation-gamma-zero-tuned-v1 | Same five seeds and inherited tuned settings; gamma 0; 8,000 neural updates | [Matched discount results](ablation-gamma-tuned-results.md) |
 | Remove future-value target term | ablation-gamma-zero-v1 | Same five seeds/budget; four features; gamma 0 | [Discount ablation](ablation-gamma-results.md) |
 
-Each of the five main conditions contains 60 model/source/seed configurations (including trivial controls), 120 source-target evaluations, and 360 operating-point metric rows. Together these are 300 configurations, 600 evaluations and 1,800 metric rows. Repeated controls are not independent evidence or additional datasets. The original pilot's 18 fits, new tuning stage's 60 candidate evaluations (12 neural trajectories plus 24 supervised fits), and smoke's 12 configurations are separate.
+Each of the six main conditions contains 60 model/source/seed configurations (including trivial controls), 120 source-target evaluations, and 360 operating-point metric rows. Together these are 360 configurations, 720 evaluations and 2,160 metric rows. Repeated controls are not independent evidence or additional datasets. The original pilot's 18 fits, new tuning stage's 60 candidate evaluations (12 neural trajectories plus 24 supervised fits), and smoke's 12 configurations are separate.
 
 ## Stored evidence
 
@@ -51,3 +52,9 @@ A read-only reconstruction reproduced both source transformers and transfer expo
 [Validation plateau results](source-convergence-results.md) record six trajectories using pilot seed 101, 128,000 optimizer updates and 26 source-validation checkpoints under a predefined .001 AP / two-check patience rule, capped at 32,000. All checkpoints, stopping decisions and selections were verified; all six original 8,000-update scores were reproduced exactly. All 32 tests passed. No new test evaluations were performed, so main five-seed configuration and metric counts are unchanged.
 
 All six met the operational rule, with Mendeley DDQN doing so at the cap. This is not mathematical or multi-seed convergence evidence. The inventory now covers 3,263 local files across 19 folders. Future evaluation must distinguish individually selected budgets from a matched-budget algorithm comparison. Independent confirmation and extractor-equivalence limitations remain open; work does not depend on an RA response.
+
+## Latest completed stage: matched longer-budget five-seed evaluation
+
+The frozen source-specific policy uses the largest checkpoint selected by the source-validation pilot: 16,000 ISCX and 28,000 Mendeley updates, shared by MLP/DQN/DDQN. This is a matched-update comparison, not individually selected stopping. All 60 configurations, 120 source-target evaluations and 360 operating-point metric rows completed. All 34 tests passed; all 360 metrics, 180 paired prediction files, actual neural budgets and RL exposures were verified. Ninety non-neural control files agree within 1e-12 with unchanged decisions and metrics.
+
+Longer training did not improve mean Mendeley RL test AP despite pilot validation gains; MLP improved and Random Forest retains highest within-source AP. Transfer remains weak and no consistent DDQN advantage emerges. [Full results](matched-long-results.md) preserve metric-specific rankings and limitations. The inventory now records 3,834 local files across 22 folders. Independent confirmation and extractor-equivalence limits remain; reassess the manuscript contribution before expanding experiments.

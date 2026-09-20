@@ -1,0 +1,25 @@
+{
+  "source_updates": {
+    "iscx": 16000,
+    "mendeley": 28000
+  },
+  "seeds": [
+    11,
+    23,
+    37,
+    51,
+    71
+  ],
+  "gamma": 0.99,
+  "batch_size": 64,
+  "weighting": "none",
+  "feature_condition": "all",
+  "trees": 200,
+  "learning_rate": 0.001,
+  "rule": "Largest source-validation selected checkpoint per source, shared by MLP/DQN/DDQN; fixed before five-seed evaluation.",
+  "preparation_manifest_sha256": "50e9ad9a9b469555541b8e2763c5ef159230ad28be9c872bc8ada7bb2252d0b1",
+  "tuning_selection_sha256": "f1ebd9a6e837891a84c6fbae98dd15e15a4a3ebb8fe8c18a76bf4c426ea6d0a6",
+  "convergence_results_sha256": "cfb92d277561116b5c80e6e8e19c422ce90ac1ff14986a9821d0ff6ed06224fa",
+  "scope": "Exploratory matched update counts, not equal compute; existing test sets previously inspected.",
+  "test_metrics_used_for_this_budget_selection": false
+}

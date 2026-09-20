@@ -254,6 +254,18 @@ def load_export(folder, manifest, source, target, split):
     return frame["sample_id"].to_numpy(), x, y
 
 
+def apply_matched_budgets(tuning, policy):
+    if set(policy['source_updates']) != {'iscx','mendeley'}:
+        raise ValueError('Expected both source budgets')
+    updated = copy.deepcopy(tuning)
+    for source, updates in policy['source_updates'].items():
+        if type(updates) is not int or updates < 1:
+            raise ValueError('Invalid source update budget')
+        for model in ['mlp','dqn','ddqn']:
+            updated['selected'][source][model]['updates'] = updates
+    return updated
+
+
 def run(args):
     folder, output = Path(args.prepared), Path(args.output)
     tuning = None
@@ -273,6 +285,20 @@ def run(args):
                 continue
             if tuning[key] != getattr(args, key):
                 raise ValueError('Tuning configuration mismatch: ' + key)
+    matched_path = getattr(args, 'matched_budget_policy', None)
+    matched = None
+    if matched_path:
+        if tuning is None or discount_ablation:
+            raise ValueError('Matched budgets require standard tuning selection')
+        matched = json.loads(Path(matched_path).read_text())
+        if matched['tuning_selection_sha256'] != file_hash(args.tuning_selection):
+            raise ValueError('Matched budget selection hash mismatch')
+        if matched['preparation_manifest_sha256'] != file_hash(folder / 'manifest.json'):
+            raise ValueError('Matched budget preparation mismatch')
+        for key in ['gamma','batch_size','weighting','feature_condition','trees','seeds']:
+            if matched[key] != getattr(args,key):
+                raise ValueError('Matched budget configuration mismatch: '+key)
+        tuning = apply_matched_budgets(tuning, matched)
     budget_hash = None
     if args.budget_selection:
         selected = json.loads(Path(args.budget_selection).read_text())
@@ -295,6 +321,9 @@ def run(args):
     configuration = dict(vars(args))
     configuration.pop('budget_selection')
     configuration.pop('tuning_selection')
+    configuration.pop('matched_budget_policy', None)
+    configuration['matched_budget_policy_sha256'] = file_hash(matched_path) if matched else None
+    configuration['source_update_budgets'] = matched['source_updates'] if matched else None
     configuration['tuning_selection_sha256'] = file_hash(args.tuning_selection) if tuning else None
     configuration['selected_settings'] = tuning['selected'] if tuning else None
     configuration['budget_selection_sha256'] = budget_hash
@@ -315,6 +344,8 @@ def run(args):
         configuration['selection_gamma'] = tuning['gamma']
         if discount_ablation:
             configuration['tuning'] = 'inherited_gamma_0.99_selection_for_fixed_settings_gamma_zero_ablation'
+        if matched:
+            configuration['tuning'] = 'inherited_tuning_with_frozen_source_matched_neural_budgets'
         configuration['updates'] = 'per_source_model_selected_settings'
         configuration['learning_rate'] = 'per_source_model_selected_settings'
     save_json(output / "run.json", configuration)
@@ -407,6 +438,7 @@ def main():
     p.add_argument("--updates", type=int, default=5000)
     p.add_argument("--budget-selection", help="Source-only selection.json; checks data/configuration before applying its budget")
     p.add_argument('--tuning-selection', help='Selected per-source/model settings from tune_source_models.py')
+    p.add_argument('--matched-budget-policy', help='Frozen per-source neural update budgets applied over original tuning selection')
     p.add_argument('--discount-ablation-from-tuning', action='store_true', help='Inherit gamma-0.99 selected settings unchanged for a gamma-zero diagnostic')
     p.add_argument("--batch-size", type=int, default=64)
     p.add_argument("--gamma", type=float, default=.99)
