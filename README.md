@@ -123,3 +123,7 @@ The [source-validation extension](docs/source-convergence-results.md) checked si
 ## Completed matched longer-budget five-seed evaluation
 
 The [latest results](docs/matched-long-results.md) use frozen budgets of 16,000 updates for ISCX and 28,000 for Mendeley, shared by MLP/DQN/DDQN. All 60 configurations and 360 metric rows completed; all 34 tests passed. Verification checked saved metrics, 180 paired prediction files, actual neural budgets and unchanged non-neural controls. Mendeley RL pilot-validation gains did not translate into mean test-AP gains; MLP improved, Random Forest retains highest within-source AP, and transfer remains weak. Policy, per-seed metrics, SD summaries and paired comparisons are recorded under research/results/matched-long. This is exploratory evidence on fixed partitions, not a general convergence or DDQN-superiority claim.
+
+## Revised manuscript draft
+
+The [replacement manuscript](docs/manuscript-revision.md) reframes the study as a controlled four-feature comparison of Q-learning and supervised baselines. It includes revised research questions, methods, verified mean/SD tables, operational false-positive analysis and explicit limits. The [reviewer coverage map](docs/manuscript-revision-review.md) distinguishes addressed concerns from remaining novelty, figure, imbalance and independent-validation gaps. This is an editorial draft rather than a submission-ready typeset article. No models were retrained for this revision.
