@@ -115,3 +115,7 @@ The previously listed matched longer-budget gamma comparison is complete. [Resul
 ## Cross-dataset validation readiness
 
 The [cross-dataset protocol audit](docs/cross-dataset-validation.md) reproduces both saved transfer exports using source-training-only preprocessing. It separates verified numeric preparation from unresolved extractor equivalence, records target range and feature-collision diagnostics, and specifies the raw-URL/extractor evidence needed for a stronger follow-up. Existing transfer results remain exploratory; no additional model training was performed for this audit.
+
+## Completed source-only plateau diagnostic
+
+The [source-validation extension](docs/source-convergence-results.md) checked six original-pilot-seed trajectories beyond 8,000 updates, under a fixed .001 AP improvement / two-check patience rule capped at 32,000. All 26 checkpoints and stopping/selection decisions were verified; all 32 tests passed. Mendeley RL validation scores benefited from longer training, while ISCX gains were small and Mendeley MLP did not improve. No test data were evaluated. This establishes a bounded single-seed validation plateau diagnostic, not general convergence. Existing five-seed test results are retained. Policy, curves, results and verification are published under research/results/source-convergence.

@@ -1,0 +1,11 @@
+{
+  "actual_stopping_and_selection_reproduced": true,
+  "policy_sha256": "a20ac6543afc2b2bf10b33823c468a61fb9cfd122b46d329ff0473b1995480cb",
+  "prepared_export_access_record": "Only four source train/validation exports",
+  "results_sha256": "cfb92d277561116b5c80e6e8e19c422ce90ac1ff14986a9821d0ff6ed06224fa",
+  "scope": "Single reused pilot seed; no test performance, significance or mathematical convergence claim.",
+  "test_evaluations": 0,
+  "verified_checkpoints": 26,
+  "verified_trajectories": 6,
+  "verifier_sha256": "ce49b982b2d98e1aca5621474c4ef7108d4c7410ac146df62007b341ea4dae4b"
+}

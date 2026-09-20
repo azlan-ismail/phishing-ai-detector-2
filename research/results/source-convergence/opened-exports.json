@@ -1,0 +1,22 @@
+[
+  {
+    "file": "iscx_to_iscx_train.csv",
+    "rows": 9221,
+    "sha256": "ca57148a6b92a760b7502e4dd9e31d1fd1039c243ae900db162e193a86f1254d"
+  },
+  {
+    "file": "iscx_to_iscx_validation.csv",
+    "rows": 3073,
+    "sha256": "8defcdad2ffacde1c00ec3cfd80aac0341cb6057821ad4d492d8d7b10a8a2f9d"
+  },
+  {
+    "file": "mendeley_to_mendeley_train.csv",
+    "rows": 35186,
+    "sha256": "056cad1efc33d35d952cfd917df7f6b835b6ff0717a2ba5fe901faf75492f3c2"
+  },
+  {
+    "file": "mendeley_to_mendeley_validation.csv",
+    "rows": 11730,
+    "sha256": "c38bb01a6e1cd2257557fc76974ea849518f9c5dbe535ef0ac634e03f48bacba"
+  }
+]

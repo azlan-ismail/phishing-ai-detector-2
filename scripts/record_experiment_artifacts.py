@@ -11,7 +11,8 @@ def inventory(work, output):
                'verified-five-v1','verified-ablation-length-v1','compared-ablation-length-v1',
                'verified-ablation-gamma-zero-v1','compared-ablation-gamma-zero-v1',
                'tuning-source-v1','benchmark-tuned-v1','verified-tuned-v1','compared-tuned-v1',
-               'ablation-gamma-zero-tuned-v1','verified-gamma-zero-tuned-v1','compared-gamma-zero-tuned-v1']
+               'ablation-gamma-zero-tuned-v1','verified-gamma-zero-tuned-v1','compared-gamma-zero-tuned-v1',
+               'source-convergence-v1','verified-source-convergence-v1']
     result = {'scope': 'Relative local artifact inventory; hashes are integrity records, not a claim of public availability. Raw data, predictions and weights remain local.', 'runs': {}}
     for name in folders:
         root = work / name

@@ -1,0 +1,45 @@
+{
+  "batch_size": 64,
+  "checkpoints": [
+    8000,
+    12000,
+    16000,
+    20000,
+    24000,
+    28000,
+    32000
+  ],
+  "convergence_claim": "Operational validation plateau only; no mathematical or multi-seed convergence claim.",
+  "gamma": 0.99,
+  "learning_rate": 0.001,
+  "minimum_gain": 0.001,
+  "models": [
+    "mlp",
+    "dqn",
+    "ddqn"
+  ],
+  "patience": 2,
+  "preparation_manifest_sha256": "50e9ad9a9b469555541b8e2763c5ef159230ad28be9c872bc8ada7bb2252d0b1",
+  "purpose": "exploratory source-validation plateau diagnostic",
+  "reference_selection_sha256": "f1ebd9a6e837891a84c6fbae98dd15e15a4a3ebb8fe8c18a76bf4c426ea6d0a6",
+  "script_sha256": "90209ee489aebdec7988c8cb1a96b18ceab6388bb8fc8c8e0acff10d4e27a939",
+  "seed": 101,
+  "seed_scope": "Original pilot seed reused; not five-seed convergence evidence.",
+  "selection_rule": "Highest observed validation AP, exact ties earliest checkpoint.",
+  "software": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "python": "3.12.14",
+    "sklearn": "1.9.1",
+    "torch": "2.14.0+cpu"
+  },
+  "sources": [
+    "iscx",
+    "mendeley"
+  ],
+  "stopping_rule": "At each checkpoint, reset patience if AP exceeds the last meaningful best by at least .001; stop after two failures, or at 32000.",
+  "test_exports_opened": false,
+  "threads": 2,
+  "trainer_sha256": "a0cfdbb39ed40b4245d140e80ce7d3c3b4ab3c373628fb6a8e8784724f6af71e",
+  "weighting": "none"
+}

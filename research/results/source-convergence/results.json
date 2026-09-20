@@ -1,0 +1,348 @@
+[
+  {
+    "checkpoints": [
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 28.94307789998129,
+        "meaningful_best_ap": 0.9734109463023887,
+        "plateau_rule_met": false,
+        "updates": 8000,
+        "validation_ap": 0.9734109463023887
+      },
+      {
+        "consecutive_small_gains": 1,
+        "cumulative_seconds": 47.429950300138444,
+        "meaningful_best_ap": 0.9734109463023887,
+        "plateau_rule_met": false,
+        "updates": 12000,
+        "validation_ap": 0.9736418439013447
+      },
+      {
+        "consecutive_small_gains": 2,
+        "cumulative_seconds": 74.1376432001125,
+        "meaningful_best_ap": 0.9734109463023887,
+        "plateau_rule_met": true,
+        "updates": 16000,
+        "validation_ap": 0.9739626492488053
+      }
+    ],
+    "convergence_established": false,
+    "gain_over_8000": 0.000551702946416599,
+    "initial_8000_ap": 0.9734109463023887,
+    "model": "mlp",
+    "prefix_8000_exactly_reproduced": true,
+    "selected_updates": 16000,
+    "selected_validation_ap": 0.9739626492488053,
+    "source": "iscx",
+    "stop_reason": "validation_plateau_rule",
+    "stop_updates": 16000,
+    "training": {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 110,
+      "optimizer_updates": 16000,
+      "sample_exposures": 1017510
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 58.77176809986122,
+        "meaningful_best_ap": 0.9699369167778641,
+        "plateau_rule_met": false,
+        "updates": 8000,
+        "validation_ap": 0.9699369167778641
+      },
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 80.23196100001223,
+        "meaningful_best_ap": 0.9711764161429556,
+        "plateau_rule_met": false,
+        "updates": 12000,
+        "validation_ap": 0.9711764161429556
+      },
+      {
+        "consecutive_small_gains": 1,
+        "cumulative_seconds": 100.24545539985411,
+        "meaningful_best_ap": 0.9711764161429556,
+        "plateau_rule_met": false,
+        "updates": 16000,
+        "validation_ap": 0.9687389204549113
+      },
+      {
+        "consecutive_small_gains": 2,
+        "cumulative_seconds": 124.4371048999019,
+        "meaningful_best_ap": 0.9711764161429556,
+        "plateau_rule_met": true,
+        "updates": 20000,
+        "validation_ap": 0.9692394123280702
+      }
+    ],
+    "convergence_established": false,
+    "gain_over_8000": 0.0012394993650914898,
+    "initial_8000_ap": 0.9699369167778641,
+    "model": "dqn",
+    "prefix_8000_exactly_reproduced": true,
+    "selected_updates": 12000,
+    "selected_validation_ap": 0.9711764161429556,
+    "source": "iscx",
+    "stop_reason": "validation_plateau_rule",
+    "stop_updates": 20000,
+    "training": {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 137,
+      "optimizer_updates": 20000,
+      "sample_exposures": 1271917
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 79.55017840000801,
+        "meaningful_best_ap": 0.9696247681976999,
+        "plateau_rule_met": false,
+        "updates": 8000,
+        "validation_ap": 0.9696247681976999
+      },
+      {
+        "consecutive_small_gains": 1,
+        "cumulative_seconds": 115.718696200056,
+        "meaningful_best_ap": 0.9696247681976999,
+        "plateau_rule_met": false,
+        "updates": 12000,
+        "validation_ap": 0.9698925319590775
+      },
+      {
+        "consecutive_small_gains": 2,
+        "cumulative_seconds": 150.31995310005732,
+        "meaningful_best_ap": 0.9696247681976999,
+        "plateau_rule_met": true,
+        "updates": 16000,
+        "validation_ap": 0.9700497694536098
+      }
+    ],
+    "convergence_established": false,
+    "gain_over_8000": 0.0004250012559098293,
+    "initial_8000_ap": 0.9696247681976999,
+    "model": "ddqn",
+    "prefix_8000_exactly_reproduced": true,
+    "selected_updates": 16000,
+    "selected_validation_ap": 0.9700497694536098,
+    "source": "iscx",
+    "stop_reason": "validation_plateau_rule",
+    "stop_updates": 16000,
+    "training": {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 110,
+      "optimizer_updates": 16000,
+      "sample_exposures": 1017510
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 30.563366800080985,
+        "meaningful_best_ap": 0.911827522757249,
+        "plateau_rule_met": false,
+        "updates": 8000,
+        "validation_ap": 0.911827522757249
+      },
+      {
+        "consecutive_small_gains": 1,
+        "cumulative_seconds": 46.76632980001159,
+        "meaningful_best_ap": 0.911827522757249,
+        "plateau_rule_met": false,
+        "updates": 12000,
+        "validation_ap": 0.9109692135558926
+      },
+      {
+        "consecutive_small_gains": 2,
+        "cumulative_seconds": 64.13331369985826,
+        "meaningful_best_ap": 0.911827522757249,
+        "plateau_rule_met": true,
+        "updates": 16000,
+        "validation_ap": 0.9095348072443473
+      }
+    ],
+    "convergence_established": false,
+    "gain_over_8000": 0.0,
+    "initial_8000_ap": 0.911827522757249,
+    "model": "mlp",
+    "prefix_8000_exactly_reproduced": true,
+    "selected_updates": 8000,
+    "selected_validation_ap": 0.911827522757249,
+    "source": "mendeley",
+    "stop_reason": "validation_plateau_rule",
+    "stop_updates": 16000,
+    "training": {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 29,
+      "optimizer_updates": 16000,
+      "sample_exposures": 1023594
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 57.080470599932596,
+        "meaningful_best_ap": 0.8988830811020226,
+        "plateau_rule_met": false,
+        "updates": 8000,
+        "validation_ap": 0.8988830811020226
+      },
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 81.6237047999166,
+        "meaningful_best_ap": 0.9009427117985893,
+        "plateau_rule_met": false,
+        "updates": 12000,
+        "validation_ap": 0.9009427117985893
+      },
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 105.26795729994774,
+        "meaningful_best_ap": 0.9038253443352596,
+        "plateau_rule_met": false,
+        "updates": 16000,
+        "validation_ap": 0.9038253443352596
+      },
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 128.6652836999856,
+        "meaningful_best_ap": 0.9049126326203005,
+        "plateau_rule_met": false,
+        "updates": 20000,
+        "validation_ap": 0.9049126326203005
+      },
+      {
+        "consecutive_small_gains": 1,
+        "cumulative_seconds": 153.74874490010552,
+        "meaningful_best_ap": 0.9049126326203005,
+        "plateau_rule_met": false,
+        "updates": 24000,
+        "validation_ap": 0.905707871240648
+      },
+      {
+        "consecutive_small_gains": 2,
+        "cumulative_seconds": 178.03520060004666,
+        "meaningful_best_ap": 0.9049126326203005,
+        "plateau_rule_met": true,
+        "updates": 28000,
+        "validation_ap": 0.9054498099814827
+      }
+    ],
+    "convergence_established": false,
+    "gain_over_8000": 0.0068247901386253584,
+    "initial_8000_ap": 0.8988830811020226,
+    "model": "dqn",
+    "prefix_8000_exactly_reproduced": true,
+    "selected_updates": 24000,
+    "selected_validation_ap": 0.905707871240648,
+    "source": "mendeley",
+    "stop_reason": "validation_plateau_rule",
+    "stop_updates": 28000,
+    "training": {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 50,
+      "optimizer_updates": 28000,
+      "sample_exposures": 1791300
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 90.2195232999511,
+        "meaningful_best_ap": 0.9010373605513691,
+        "plateau_rule_met": false,
+        "updates": 8000,
+        "validation_ap": 0.9010373605513691
+      },
+      {
+        "consecutive_small_gains": 1,
+        "cumulative_seconds": 122.33045309991576,
+        "meaningful_best_ap": 0.9010373605513691,
+        "plateau_rule_met": false,
+        "updates": 12000,
+        "validation_ap": 0.9016454509228584
+      },
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 152.663447199855,
+        "meaningful_best_ap": 0.903900581081005,
+        "plateau_rule_met": false,
+        "updates": 16000,
+        "validation_ap": 0.903900581081005
+      },
+      {
+        "consecutive_small_gains": 1,
+        "cumulative_seconds": 178.66173349996097,
+        "meaningful_best_ap": 0.903900581081005,
+        "plateau_rule_met": false,
+        "updates": 20000,
+        "validation_ap": 0.9034507787293578
+      },
+      {
+        "consecutive_small_gains": 0,
+        "cumulative_seconds": 215.2201046999544,
+        "meaningful_best_ap": 0.906324417488027,
+        "plateau_rule_met": false,
+        "updates": 24000,
+        "validation_ap": 0.906324417488027
+      },
+      {
+        "consecutive_small_gains": 1,
+        "cumulative_seconds": 261.9890940999612,
+        "meaningful_best_ap": 0.906324417488027,
+        "plateau_rule_met": false,
+        "updates": 28000,
+        "validation_ap": 0.9069988497209311
+      },
+      {
+        "consecutive_small_gains": 2,
+        "cumulative_seconds": 296.10679369978607,
+        "meaningful_best_ap": 0.906324417488027,
+        "plateau_rule_met": true,
+        "updates": 32000,
+        "validation_ap": 0.9060839265557261
+      }
+    ],
+    "convergence_established": false,
+    "gain_over_8000": 0.005961489169562073,
+    "initial_8000_ap": 0.9010373605513691,
+    "model": "ddqn",
+    "prefix_8000_exactly_reproduced": true,
+    "selected_updates": 28000,
+    "selected_validation_ap": 0.9069988497209311,
+    "source": "mendeley",
+    "stop_reason": "validation_plateau_rule",
+    "stop_updates": 32000,
+    "training": {
+      "class_weights": [
+        1.0,
+        1.0
+      ],
+      "completed_training_traversals": 58,
+      "optimizer_updates": 32000,
+      "sample_exposures": 2047188
+    }
+  }
+]

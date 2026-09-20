@@ -182,8 +182,9 @@ def train_neural(x, y, algorithm, seed, updates, batch_size=64, gamma=.99,
                         "epsilon": epsilon if algorithm != "mlp" else None,
                         "collection_mean_reward": mean_reward, "training_sample_exposures": exposures})
         if observer is not None:
-            observer(update + 1, net)
-    return net.eval(), history, {"class_weights": weights.tolist(), "optimizer_updates": updates,
+            if observer(update + 1, net) is True:
+                break
+    return net.eval(), history, {"class_weights": weights.tolist(), "optimizer_updates": len(history),
                                 "sample_exposures": exposures, "completed_training_traversals": completed_epochs}
 
 

@@ -45,3 +45,9 @@ Within-dataset AP improved slightly, with mixed transfer effects; there is no co
 ## Cross-dataset protocol audit (20 September 2026)
 
 A read-only reconstruction reproduced both source transformers and transfer exports against raw/partition/export hashes and labels. This adds no model fits or metric rows; experiment counts and the 3,186-file run inventory are unchanged. New aggregate audit evidence is stored separately in research/audits/cross-dataset-protocol.json. [Cross-dataset validation](cross-dataset-validation.md) records the limits, range/collision diagnostics and the evidence needed for harmonized extraction and independent confirmation.
+
+## Source-only plateau diagnostic
+
+[Validation plateau results](source-convergence-results.md) record six trajectories using pilot seed 101, 128,000 optimizer updates and 26 source-validation checkpoints under a predefined .001 AP / two-check patience rule, capped at 32,000. All checkpoints, stopping decisions and selections were verified; all six original 8,000-update scores were reproduced exactly. All 32 tests passed. No new test evaluations were performed, so main five-seed configuration and metric counts are unchanged.
+
+All six met the operational rule, with Mendeley DDQN doing so at the cap. This is not mathematical or multi-seed convergence evidence. The inventory now covers 3,263 local files across 19 folders. Future evaluation must distinguish individually selected budgets from a matched-budget algorithm comparison. Independent confirmation and extractor-equivalence limitations remain open; work does not depend on an RA response.
