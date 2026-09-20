@@ -1,0 +1,101 @@
+{
+  "direction": "gamma zero minus gamma 0.99",
+  "matched_prediction_files": 180,
+  "non_rl_score_control_files_within_absolute_1e-12": 120,
+  "non_rl_max_absolute_score_difference": 3.3306690738754696e-16,
+  "non_rl_changed_operating_point_decisions": 0,
+  "non_rl_max_absolute_metric_differences": {
+    "always_malicious": {
+      "average_precision": 0.0,
+      "roc_auc": 0.0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "balanced_accuracy": 0.0,
+      "predicted_malicious_fraction": 0.0
+    },
+    "logistic": {
+      "average_precision": 0.0,
+      "roc_auc": 0.0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "balanced_accuracy": 0.0,
+      "predicted_malicious_fraction": 0.0
+    },
+    "random_forest": {
+      "average_precision": 0.0,
+      "roc_auc": 0.0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "balanced_accuracy": 0.0,
+      "predicted_malicious_fraction": 0.0
+    },
+    "mlp": {
+      "average_precision": 0.0,
+      "roc_auc": 0.0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "balanced_accuracy": 0.0,
+      "predicted_malicious_fraction": 0.0
+    }
+  },
+  "identical_gamma_zero_dqn_ddqn_files": 40,
+  "budget": "Training settings inherited unchanged from gamma-0.99 source-validation selection; gamma-zero not independently tuned.",
+  "updates": "per_source_model_selected_settings",
+  "selected_settings": {
+    "iscx": {
+      "ddqn": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "dqn": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "logistic": {
+        "C": 100.0
+      },
+      "mlp": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "random_forest": {
+        "max_depth": 8,
+        "min_samples_leaf": 5
+      }
+    },
+    "mendeley": {
+      "ddqn": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "dqn": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "logistic": {
+        "C": 100.0
+      },
+      "mlp": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "random_forest": {
+        "max_depth": 8,
+        "min_samples_leaf": 1
+      }
+    }
+  },
+  "actual_neural_training_exposures_matched": true,
+  "baseline_run_sha256": "d60607a7c233a09aff9a947b7f34e778eb4a5066caa3670c818bdc28d7c934ab",
+  "ablation_run_sha256": "5bea49c912fc4542f37196112ca20209137b39b1c5c3d3e384d90cd2be921c44",
+  "comparison_script_sha256": "e7f2c523040f2cd71c2783e03031d5b26e7d51d0f742cd7e705634a65b01cef6",
+  "scope": "Exploratory paired seeds on fixed partitions, not significance or dataset uncertainty."
+}

@@ -1,0 +1,70 @@
+{
+  "dataset_sha256": "685e9fbdbe08c8b23fdb82e06cf5e154a8516e93f7b07f8a67328f17f86d0d72",
+  "limitations": "Assumes current row order and recorded split settings. Repeated coarse features do not establish duplicate URLs. Class semantics remain unverified.",
+  "method": "Reconstruct tutorial split with NumPy RandomState(42); first ceil(0.3*n) indices are test. No model loading or training.",
+  "metrics": {
+    "lr": {
+      "accuracy": 0.9222188724751281,
+      "all_checked_values_match": true,
+      "checks": {
+        "accuracy": true,
+        "f1-score": true,
+        "precision": true,
+        "recall": true,
+        "support": true
+      },
+      "class_1_recomputed": {
+        "f1-score": 0.9317460317460318,
+        "precision": 0.9312533051295611,
+        "recall": 0.9322392800423505,
+        "support": 1889
+      },
+      "matrix_total": 3317
+    },
+    "rf": {
+      "accuracy": 0.9668375037684654,
+      "all_checked_values_match": true,
+      "checks": {
+        "accuracy": true,
+        "f1-score": true,
+        "precision": true,
+        "recall": true,
+        "support": true
+      },
+      "class_1_recomputed": {
+        "f1-score": 0.9712041884816754,
+        "precision": 0.9606421543241843,
+        "recall": 0.9820010587612493,
+        "support": 1889
+      },
+      "matrix_total": 3317
+    },
+    "xgb": {
+      "accuracy": 0.9698522761531504,
+      "all_checked_values_match": true,
+      "checks": {
+        "accuracy": true,
+        "f1-score": true,
+        "precision": true,
+        "recall": true,
+        "support": true
+      },
+      "class_1_recomputed": {
+        "f1-score": 0.9737808075511274,
+        "precision": 0.9646753246753247,
+        "recall": 0.9830598200105876,
+        "support": 1889
+      },
+      "matrix_total": 3317
+    }
+  },
+  "numpy_version": "2.3.5",
+  "raw_test_labels": {
+    "-1": 1428,
+    "1": 1889
+  },
+  "test_rows": 3317,
+  "test_rows_matching_training_features": 2053,
+  "test_rows_matching_training_row_including_label": 2038,
+  "train_rows": 7738
+}

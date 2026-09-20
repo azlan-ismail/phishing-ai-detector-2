@@ -1,0 +1,10 @@
+{
+  "source_metrics_sha256": "0934c271dca33a8f83eedba738aed57ad54fb8bf340f81df4e5466b04a0693a8",
+  "verified_summary_sha256": "063ab3c4b222c88498786601238d41aab2eb1f9ad73c44a50ec7b0ffff44d65c",
+  "manuscript_sha256": "8da6326e2eeea4623ce4e10f228343b10923b861ca2b8c1c70141905d62a582f",
+  "script_sha256": "357e13be89d898ad58be907404f76ab26a540f95490f9ab9bce7e231400c925b",
+  "metric_summary_pairs_checked": 360,
+  "within_table_rows": 6,
+  "transfer_table_rows": 2,
+  "scope": "Tables recomputed from saved per-seed metrics; manuscript interpretation requires author review."
+}

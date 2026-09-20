@@ -1,0 +1,54 @@
+{
+  "scope": "Read-only post-hoc protocol audit; no training, target tuning or feature correction.",
+  "script_sha256": "eee2f61e6e00409e092f7f2fc9888f668d033946b522d809b578d21826e2298b",
+  "preparation_manifest_sha256": "50e9ad9a9b469555541b8e2763c5ef159230ad28be9c872bc8ada7bb2252d0b1",
+  "sources": {
+    "iscx": {
+      "raw_sha256": "99c732baf469f76fe7fa79e28291b3fb685d06b86e307f26ba09fd2ba7d8ae99",
+      "rows": 15367,
+      "non_numeric_predictor_columns": [],
+      "transformer_reconstructed_from_source_train": true,
+      "raw_url_or_domain_identity_available": false
+    },
+    "mendeley": {
+      "raw_sha256": "2252b0d69252301880b1c87fe34b4f7fa646edaab67e3fc16f7779245085a492",
+      "rows": 58645,
+      "non_numeric_predictor_columns": [],
+      "transformer_reconstructed_from_source_train": true,
+      "raw_url_or_domain_identity_available": false
+    }
+  },
+  "directions": [
+    {
+      "source": "iscx",
+      "target": "mendeley",
+      "test_rows": 11729,
+      "export_sha256": "a5fa3d728c1478c2a3106d079fb43e216cdc08eb972ba8d4babb61b143aeff52",
+      "source_fitted_export_reproduced": true,
+      "outside_source_training_range": {
+        "url_length": 7183,
+        "domain_length": 0,
+        "dot_count_url": 2,
+        "domain_url_ratio": 4656
+      },
+      "target_rows_with_four_feature_vector_seen_in_source_train": 1254,
+      "collision_interpretation": "Numeric feature collisions are not evidence of duplicate URLs; URL/domain identity unavailable."
+    },
+    {
+      "source": "mendeley",
+      "target": "iscx",
+      "test_rows": 3073,
+      "export_sha256": "822757dc9967ade831eef948cf52d573d103a965ea9b33f1d250d9837cebc862",
+      "source_fitted_export_reproduced": true,
+      "outside_source_training_range": {
+        "url_length": 0,
+        "domain_length": 0,
+        "dot_count_url": 0,
+        "domain_url_ratio": 0
+      },
+      "target_rows_with_four_feature_vector_seen_in_source_train": 1104,
+      "collision_interpretation": "Numeric feature collisions are not evidence of duplicate URLs; URL/domain identity unavailable."
+    }
+  ],
+  "extraction_equivalence": "Not established by numeric reconstruction; requires original extractors and/or raw URLs."
+}

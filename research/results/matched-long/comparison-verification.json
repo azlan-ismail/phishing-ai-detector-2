@@ -1,0 +1,18 @@
+{
+  "actual_neural_budgets_and_histories_verified": true,
+  "baseline_config_sha256": "d60607a7c233a09aff9a947b7f34e778eb4a5066caa3670c818bdc28d7c934ab",
+  "comparison_script_sha256": "c593d52c445f8834c01281e8e9b22591a4a00c6b751d6829df206d8e3f4ffe98",
+  "control_decisions_and_metrics_unchanged": true,
+  "control_max_score_difference": 4.440892098500626e-16,
+  "direction": "longer matched budgets minus tuned 8000-update reference",
+  "extended_config_sha256": "ebd71b90b67b4bf9456d156e23e28b7225ac209afe830ee324397606367094dd",
+  "non_neural_control_files": 90,
+  "paired_prediction_files": 180,
+  "policy_sha256": "fb3852061df3013169982d6df3ba7b6f457f41ca6e10a09b2bdca2ad997e2788",
+  "rl_training_exposures_matched": true,
+  "scope": "Exploratory paired training seeds on fixed partitions; equal updates are not equal compute.",
+  "source_updates": {
+    "iscx": 16000,
+    "mendeley": 28000
+  }
+}

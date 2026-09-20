@@ -1,0 +1,109 @@
+{
+  "batch_size": 64,
+  "budget_selection_sha256": null,
+  "device": "cpu",
+  "discount_ablation_from_tuning": false,
+  "early_stopping": "none",
+  "epsilon_decay_per_update": 0.995,
+  "epsilon_initial": 1.0,
+  "epsilon_min": 0.05,
+  "feature_condition": "all",
+  "feature_status": "exploratory_pending_source_definition_verification",
+  "fpr_limit": 0.01,
+  "gamma": 0.99,
+  "gradient_clip_norm": 1.0,
+  "hardware": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 142 Stepping 9, GenuineIntel"
+  },
+  "hidden_layers": [
+    128,
+    128
+  ],
+  "input_order": [
+    "url_length",
+    "domain_length",
+    "dot_count_url",
+    "domain_url_ratio",
+    "url_length_missing",
+    "domain_length_missing",
+    "dot_count_url_missing",
+    "domain_url_ratio_missing"
+  ],
+  "learning_rate": "per_source_model_selected_settings",
+  "matched_budget_policy_sha256": "fb3852061df3013169982d6df3ba7b6f457f41ca6e10a09b2bdca2ad997e2788",
+  "preparation_manifest_sha256": "50e9ad9a9b469555541b8e2763c5ef159230ad28be9c872bc8ada7bb2252d0b1",
+  "purpose": "exploratory",
+  "replay_capacity": 10000,
+  "script_sha256": "62e3edfa9e72c2a20a892fd2721f192ae535c503b3c547d10feeebd4291d0c11",
+  "seeds": [
+    11,
+    23,
+    37,
+    51,
+    71
+  ],
+  "selected_settings": {
+    "iscx": {
+      "ddqn": {
+        "learning_rate": 0.001,
+        "updates": 16000
+      },
+      "dqn": {
+        "learning_rate": 0.001,
+        "updates": 16000
+      },
+      "logistic": {
+        "C": 100.0
+      },
+      "mlp": {
+        "learning_rate": 0.001,
+        "updates": 16000
+      },
+      "random_forest": {
+        "max_depth": 8,
+        "min_samples_leaf": 5
+      }
+    },
+    "mendeley": {
+      "ddqn": {
+        "learning_rate": 0.001,
+        "updates": 28000
+      },
+      "dqn": {
+        "learning_rate": 0.001,
+        "updates": 28000
+      },
+      "logistic": {
+        "C": 100.0
+      },
+      "mlp": {
+        "learning_rate": 0.001,
+        "updates": 28000
+      },
+      "random_forest": {
+        "max_depth": 8,
+        "min_samples_leaf": 1
+      }
+    }
+  },
+  "selection_gamma": 0.99,
+  "software": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "python": "3.12.14",
+    "sklearn": "1.9.1",
+    "torch": "2.14.0+cpu"
+  },
+  "source_update_budgets": {
+    "iscx": 16000,
+    "mendeley": 28000
+  },
+  "target_interval_updates": 100,
+  "threads": 2,
+  "trees": 200,
+  "tuning": "inherited_tuning_with_frozen_source_matched_neural_budgets",
+  "tuning_selection_sha256": "f1ebd9a6e837891a84c6fbae98dd15e15a4a3ebb8fe8c18a76bf4c426ea6d0a6",
+  "updates": "per_source_model_selected_settings",
+  "weighting": "none"
+}

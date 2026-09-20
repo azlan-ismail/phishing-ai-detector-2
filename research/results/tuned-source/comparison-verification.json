@@ -1,0 +1,8 @@
+{
+  "all_neural_selected_budgets_checked": true,
+  "direction": "tuned minus original baseline",
+  "inference": "Bounded one-pilot-seed selection, fixed-partition five-seed reporting; no significance or convergence claim.",
+  "matched_prediction_files": 180,
+  "selected_settings_reproduced": true,
+  "verified_trial_objectives": 60
+}

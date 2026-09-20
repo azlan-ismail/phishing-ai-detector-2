@@ -1,0 +1,29 @@
+{
+  "direction": "ablation minus baseline",
+  "matched_prediction_files": 180,
+  "matched_metric_rows": 360,
+  "retained_feature_collisions": {
+    "iscx": {
+      "validation": {
+        "rows": 3073,
+        "rows_matching_training_retained_features": 2964
+      },
+      "test": {
+        "rows": 3073,
+        "rows_matching_training_retained_features": 2967
+      }
+    },
+    "mendeley": {
+      "validation": {
+        "rows": 11730,
+        "rows_matching_training_retained_features": 11661
+      },
+      "test": {
+        "rows": 11729,
+        "rows_matching_training_retained_features": 11661
+      }
+    }
+  },
+  "partition_policy": "Original four-feature grouping retained for pairing; collisions after feature removal are not duplicate URLs or proof of leakage.",
+  "inference": "Descriptive fixed-partition seed comparisons; post-hoc feature hypothesis and no target-based selection or significance claim."
+}

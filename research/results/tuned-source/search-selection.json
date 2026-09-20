@@ -1,0 +1,153 @@
+{
+  "batch_size": 64,
+  "candidates_per_model_per_source": 6,
+  "completed_candidate_evaluations": 60,
+  "diagnostics": {
+    "iscx": {
+      "ddqn": {
+        "convergence_established": false,
+        "selected_at_largest_neural_budget": true,
+        "selected_candidate": 5,
+        "validation_ap": 0.9696247681976999
+      },
+      "dqn": {
+        "convergence_established": false,
+        "selected_at_largest_neural_budget": true,
+        "selected_candidate": 5,
+        "validation_ap": 0.9699369167778641
+      },
+      "logistic": {
+        "convergence_established": false,
+        "selected_at_largest_neural_budget": false,
+        "selected_candidate": 5,
+        "validation_ap": 0.9402902887622475
+      },
+      "mlp": {
+        "convergence_established": false,
+        "selected_at_largest_neural_budget": true,
+        "selected_candidate": 5,
+        "validation_ap": 0.9734109463023887
+      },
+      "random_forest": {
+        "convergence_established": false,
+        "selected_at_largest_neural_budget": false,
+        "selected_candidate": 1,
+        "validation_ap": 0.9759241044833993
+      }
+    },
+    "mendeley": {
+      "ddqn": {
+        "convergence_established": false,
+        "selected_at_largest_neural_budget": true,
+        "selected_candidate": 5,
+        "validation_ap": 0.9010373605513691
+      },
+      "dqn": {
+        "convergence_established": false,
+        "selected_at_largest_neural_budget": true,
+        "selected_candidate": 5,
+        "validation_ap": 0.8988830811020226
+      },
+      "logistic": {
+        "convergence_established": false,
+        "selected_at_largest_neural_budget": false,
+        "selected_candidate": 5,
+        "validation_ap": 0.8854822922984042
+      },
+      "mlp": {
+        "convergence_established": false,
+        "selected_at_largest_neural_budget": true,
+        "selected_candidate": 5,
+        "validation_ap": 0.911827522757249
+      },
+      "random_forest": {
+        "convergence_established": false,
+        "selected_at_largest_neural_budget": false,
+        "selected_candidate": 0,
+        "validation_ap": 0.9164215197963492
+      }
+    }
+  },
+  "feature_condition": "all",
+  "gamma": 0.99,
+  "logistic_C": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "neural_budgets": [
+    1000,
+    4000,
+    8000
+  ],
+  "neural_learning_rates": [
+    0.0003,
+    0.001
+  ],
+  "objective": "highest source-validation average precision; exact ties select earliest candidate",
+  "pilot_seed": 101,
+  "preparation_manifest_sha256": "50e9ad9a9b469555541b8e2763c5ef159230ad28be9c872bc8ada7bb2252d0b1",
+  "rf_max_depth": [
+    8,
+    16,
+    null
+  ],
+  "rf_min_samples_leaf": [
+    1,
+    5
+  ],
+  "search_seed_limitation": "One pilot seed; final five seeds are distinct. Equal candidate counts, not equal compute.",
+  "selected": {
+    "iscx": {
+      "ddqn": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "dqn": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "logistic": {
+        "C": 100.0
+      },
+      "mlp": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "random_forest": {
+        "max_depth": 8,
+        "min_samples_leaf": 5
+      }
+    },
+    "mendeley": {
+      "ddqn": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "dqn": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "logistic": {
+        "C": 100.0
+      },
+      "mlp": {
+        "learning_rate": 0.001,
+        "updates": 8000
+      },
+      "random_forest": {
+        "max_depth": 8,
+        "min_samples_leaf": 1
+      }
+    }
+  },
+  "selector_sha256": "30173b104f1a647bf3e6e4bd34e129665480703b7d9f91a155c2cc4ef048233e",
+  "test_exports_opened": false,
+  "threads": 2,
+  "trainer_sha256": "c3ba3552aab8ee9341c386d39cf49890b06ed40b62dc39c00272532e4406eb12",
+  "trees": 200,
+  "weighting": "none"
+}

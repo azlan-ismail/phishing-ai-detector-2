@@ -1,0 +1,7 @@
+convergence_established,gain_over_8000,initial_8000_ap,model,prefix_8000_exactly_reproduced,selected_updates,selected_validation_ap,source,stop_reason,stop_updates
+False,0.000551702946416599,0.9734109463023887,mlp,True,16000,0.9739626492488053,iscx,validation_plateau_rule,16000
+False,0.0012394993650914898,0.9699369167778641,dqn,True,12000,0.9711764161429556,iscx,validation_plateau_rule,20000
+False,0.0004250012559098293,0.9696247681976999,ddqn,True,16000,0.9700497694536098,iscx,validation_plateau_rule,16000
+False,0.0,0.911827522757249,mlp,True,8000,0.911827522757249,mendeley,validation_plateau_rule,16000
+False,0.0068247901386253584,0.8988830811020226,dqn,True,24000,0.905707871240648,mendeley,validation_plateau_rule,28000
+False,0.005961489169562073,0.9010373605513691,ddqn,True,28000,0.9069988497209311,mendeley,validation_plateau_rule,32000

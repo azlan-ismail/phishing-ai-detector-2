@@ -1,0 +1,170 @@
+{
+  "candidate": {
+    "datasets": {
+      "iscx": {
+        "candidate_test_rows_matching_training": 0,
+        "full_feature_groups_disjoint": true,
+        "missing_candidates": {
+          "domain_length": 0,
+          "domain_url_ratio": 0,
+          "dot_count_url": 0,
+          "url_length": 0
+        },
+        "partition_sha256": "5942de8387c5a82d9a8ad3532140171c799b69310c1a1364b26b1a3051cf830f",
+        "partitions": {
+          "test": {
+            "class_counts": [
+              1556,
+              1517
+            ],
+            "rows": 3073
+          },
+          "train": {
+            "class_counts": [
+              4669,
+              4552
+            ],
+            "rows": 9221
+          },
+          "validation": {
+            "class_counts": [
+              1556,
+              1517
+            ],
+            "rows": 3073
+          }
+        },
+        "raw_sha256": "99c732baf469f76fe7fa79e28291b3fb685d06b86e307f26ba09fd2ba7d8ae99",
+        "rows": 15367
+      },
+      "mendeley": {
+        "candidate_test_rows_matching_training": 0,
+        "full_feature_groups_disjoint": true,
+        "missing_candidates": {
+          "domain_length": 0,
+          "domain_url_ratio": 0,
+          "dot_count_url": 0,
+          "url_length": 0
+        },
+        "partition_sha256": "3c27194f6049b940d65e161952b5c6f63ae2e500a80cdb8ed0c4abab3ec6a3b1",
+        "partitions": {
+          "test": {
+            "class_counts": [
+              5600,
+              6129
+            ],
+            "rows": 11729
+          },
+          "train": {
+            "class_counts": [
+              16798,
+              18388
+            ],
+            "rows": 35186
+          },
+          "validation": {
+            "class_counts": [
+              5600,
+              6130
+            ],
+            "rows": 11730
+          }
+        },
+        "raw_sha256": "2252b0d69252301880b1c87fe34b4f7fa646edaab67e3fc16f7779245085a492",
+        "rows": 58645
+      }
+    },
+    "export_count": 8,
+    "saved_outputs_verified": true,
+    "script_sha256": "35916d53eb3bf8df40ab3078c3d84796bbb5c9ad7b87bec1be971d28f7197d0f",
+    "software": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    }
+  },
+  "full": {
+    "datasets": {
+      "iscx": {
+        "candidate_test_rows_matching_training": 2405,
+        "full_feature_groups_disjoint": true,
+        "missing_candidates": {
+          "domain_length": 0,
+          "domain_url_ratio": 0,
+          "dot_count_url": 0,
+          "url_length": 0
+        },
+        "partition_sha256": "bf35c0637f6f1ff7d784e16ef2790163b1b6106e9a08b9c58384dcf97c44e908",
+        "partitions": {
+          "test": {
+            "class_counts": [
+              1556,
+              1517
+            ],
+            "rows": 3073
+          },
+          "train": {
+            "class_counts": [
+              4669,
+              4552
+            ],
+            "rows": 9221
+          },
+          "validation": {
+            "class_counts": [
+              1556,
+              1517
+            ],
+            "rows": 3073
+          }
+        },
+        "raw_sha256": "99c732baf469f76fe7fa79e28291b3fb685d06b86e307f26ba09fd2ba7d8ae99",
+        "rows": 15367
+      },
+      "mendeley": {
+        "candidate_test_rows_matching_training": 10349,
+        "full_feature_groups_disjoint": true,
+        "missing_candidates": {
+          "domain_length": 0,
+          "domain_url_ratio": 0,
+          "dot_count_url": 0,
+          "url_length": 0
+        },
+        "partition_sha256": "0700597f6d1c169483a39ea0313c2e93b96b94fc046c5145676ba94a4cb2d96f",
+        "partitions": {
+          "test": {
+            "class_counts": [
+              5600,
+              6129
+            ],
+            "rows": 11729
+          },
+          "train": {
+            "class_counts": [
+              16798,
+              18388
+            ],
+            "rows": 35186
+          },
+          "validation": {
+            "class_counts": [
+              5600,
+              6130
+            ],
+            "rows": 11730
+          }
+        },
+        "raw_sha256": "2252b0d69252301880b1c87fe34b4f7fa646edaab67e3fc16f7779245085a492",
+        "rows": 58645
+      }
+    },
+    "export_count": 8,
+    "saved_outputs_verified": true,
+    "script_sha256": "35916d53eb3bf8df40ab3078c3d84796bbb5c9ad7b87bec1be971d28f7197d0f",
+    "software": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    }
+  },
+  "status": "exploratory; no model training; source feature semantics pending verification",
+  "tests_passed": 14
+}
