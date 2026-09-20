@@ -256,6 +256,9 @@ def load_export(folder, manifest, source, target, split):
 def run(args):
     folder, output = Path(args.prepared), Path(args.output)
     tuning = None
+    discount_ablation = getattr(args, 'discount_ablation_from_tuning', False)
+    if discount_ablation and (not args.tuning_selection or args.gamma != 0):
+        raise ValueError('Discount ablation requires tuning selection and gamma zero')
     if args.tuning_selection:
         if args.budget_selection:
             raise ValueError('Use either budget selection or model tuning selection')
@@ -263,6 +266,10 @@ def run(args):
         if tuning['preparation_manifest_sha256'] != file_hash(folder / 'manifest.json'):
             raise ValueError('Tuning preparation mismatch')
         for key in ['gamma','batch_size','weighting','feature_condition','trees']:
+            if key == 'gamma' and discount_ablation:
+                if tuning[key] != .99:
+                    raise ValueError('Discount ablation requires gamma-0.99 source selection')
+                continue
             if tuning[key] != getattr(args, key):
                 raise ValueError('Tuning configuration mismatch: ' + key)
     budget_hash = None
@@ -304,6 +311,9 @@ def run(args):
     configuration.pop("output")
     if tuning:
         configuration['tuning'] = 'six_candidates_per_model_source_validation_AP'
+        configuration['selection_gamma'] = tuning['gamma']
+        if discount_ablation:
+            configuration['tuning'] = 'inherited_gamma_0.99_selection_for_fixed_settings_gamma_zero_ablation'
         configuration['updates'] = 'per_source_model_selected_settings'
         configuration['learning_rate'] = 'per_source_model_selected_settings'
     save_json(output / "run.json", configuration)
@@ -396,6 +406,7 @@ def main():
     p.add_argument("--updates", type=int, default=5000)
     p.add_argument("--budget-selection", help="Source-only selection.json; checks data/configuration before applying its budget")
     p.add_argument('--tuning-selection', help='Selected per-source/model settings from tune_source_models.py')
+    p.add_argument('--discount-ablation-from-tuning', action='store_true', help='Inherit gamma-0.99 selected settings unchanged for a gamma-zero diagnostic')
     p.add_argument("--batch-size", type=int, default=64)
     p.add_argument("--gamma", type=float, default=.99)
     p.add_argument("--learning-rate", type=float, default=.001)

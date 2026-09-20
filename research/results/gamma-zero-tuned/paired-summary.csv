@@ -1,0 +1,13 @@
+source,target,operating_point,average_precision_ddqn_minus_dqn_mean,average_precision_ddqn_minus_dqn_std,average_precision_ddqn_minus_dqn_count,roc_auc_ddqn_minus_dqn_mean,roc_auc_ddqn_minus_dqn_std,roc_auc_ddqn_minus_dqn_count,f1_ddqn_minus_dqn_mean,f1_ddqn_minus_dqn_std,f1_ddqn_minus_dqn_count,precision_ddqn_minus_dqn_mean,precision_ddqn_minus_dqn_std,precision_ddqn_minus_dqn_count,recall_ddqn_minus_dqn_mean,recall_ddqn_minus_dqn_std,recall_ddqn_minus_dqn_count,fpr_ddqn_minus_dqn_mean,fpr_ddqn_minus_dqn_std,fpr_ddqn_minus_dqn_count,balanced_accuracy_ddqn_minus_dqn_mean,balanced_accuracy_ddqn_minus_dqn_std,balanced_accuracy_ddqn_minus_dqn_count
+iscx,iscx,default,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+iscx,iscx,validation_f1,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+iscx,iscx,validation_fpr_limit,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+iscx,mendeley,default,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+iscx,mendeley,validation_f1,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+iscx,mendeley,validation_fpr_limit,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+mendeley,iscx,default,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+mendeley,iscx,validation_f1,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+mendeley,iscx,validation_fpr_limit,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+mendeley,mendeley,default,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+mendeley,mendeley,validation_f1,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
+mendeley,mendeley,validation_fpr_limit,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5,0.0,0.0,5
